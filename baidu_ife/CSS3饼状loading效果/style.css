@@ -1,0 +1,45 @@
+.outer {
+  position: absolute;
+
+  /* 实现水平垂直居中 */
+  /* method1 */
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  /* left: calc(50% - 50px); */
+  /* top: calc(50% - 50px); */
+
+  /* 2 */
+  /* 这里在动画里又用了transform，无效 */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+
+  /* 3 */
+  /* margin的百分比值是基于父元素宽度计算的（只能水平居中的原因），这里改为视口的50% */
+  /* margin: 50vh auto 0; */
+  /* transform: translateY(-50%); */
+
+  /* 4 */
+  /* flex */
+  /* margin: auto; */
+  /* body {display: flex;height: 100vh;} */
+
+  /* 5 */
+  /* body {display: table;width: 100%;} */
+  /* display: table-cell; */
+  /* vertical-align: middle; */
+  /* text-align: center; */
+
+  width: 100px;
+  height: 100px;
+  border: 2px solid #ff3399;
+  border-right: 2px solid #fff; /* 如果设置为none，3 / 4月亮 */
+  border-radius: 50%;
+  animation: outerRotate 1.5s linear infinite; 
+}
+@keyframes outerRotate {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}

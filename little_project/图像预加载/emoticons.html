@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表情预加载</title>
+	<style>
+		body, p, ul, li{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			background: #eee;
+		}
+		a{
+			text-decoration: none;
+			outline: none;
+		}
+		li{
+			list-style-type: none;
+		}
+		.box{
+			margin: 150px 0 0 200px;
+		}
+		#face-btn{
+			display: inline-block;
+			background: url(img/face/btn1.gif) no-repeat;
+			color: #333;
+			text-indent: 25px;
+		}
+		#face-btn:hover{
+			background: url(img/face/btn2.gif) no-repeat;
+		}
+		.panel{
+			width: 390px;
+			padding: 2px;
+			border: 1px solid #ccc;
+			background: #fff;
+			display: none;
+		}
+		.loading{
+			text-align: center;
+		}
+		.list li{
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			border: 1px solid #fff;
+			margin-bottom: 5px;
+			cursor: pointer;
+		}
+		.list li:hover{
+			border-color: #06c;
+		}
+	</style>
+</head>
+<body>
+    <div class="box">
+	    <a href="javascript:;" id="face-btn">表情</a>
+	    <div class="panel">
+		    <p class="loading">表情加载中...</p>
+		    <!--<ul class="list">
+				<li><img src="img/face/电脑泡泡 (1).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (2).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (3).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (4).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (5).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (6).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (7).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (8).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (9).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (10).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (11).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (12).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (13).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (14).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (15).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (16).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (17).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (18).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (19).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (20).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (21).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (22).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (23).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (24).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (25).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (26).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (27).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (28).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (29).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (30).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (31).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (32).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (33).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (34).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (35).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (36).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (37).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (38).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (39).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (40).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (41).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (42).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (43).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (44).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (45).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (46).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (47).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (48).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (49).gif" alt=""></li>
+					<li><img src="img/face/电脑泡泡 (50).gif" alt=""></li>
+		    </ul>-->
+	    </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="preload.js"></script>
+<script>
+	//定义变量btn panel 数组imgs
+	var $btn = $('#face-btn'),
+        $panel = $('.panel'),
+	    imgs = [];
+
+	for(var i = 0; i < 50; i++){
+		imgs[i] = 'img/face/电脑泡泡 (' + (i + 1) + ').gif'; //创建链接字符串
+	}
+
+	var len = imgs.length;
+
+
+	//点击后，图片预加载，并插入文档显示
+	$btn.on('click', function (e) {
+		e.stopPropagation();
+		$panel.is(':visible') ? $panel.hide() : $panel.show();
+
+		$.preload(imgs,{
+			all: function () {
+				var html = '';
+				html += '<ul class="list">';
+
+				for (var i = 0; i < len; i++) {
+					html += '<li><img src="' + imgs[i] + '" alt=""></li>'; //创建li img元素
+				}
+
+				html += '</ul>';
+
+				//模拟数据预加载后html插入文档的延迟
+				setTimeout(function () {
+					$panel.html(html);
+				}, 1000);
+			}
+		});
+	});
+
+	//鼠标单击空白处 panel隐藏,但是单击 元素 btn冒泡也会触发此事件
+	$(document).on('click', function () {
+		$panel.hide();
+	})
+</script>
+</body>
+</html>

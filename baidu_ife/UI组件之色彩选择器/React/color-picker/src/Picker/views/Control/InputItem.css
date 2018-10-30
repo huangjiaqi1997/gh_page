@@ -1,0 +1,22 @@
+.input-item{
+  margin: 10px 0;
+}
+label{
+  display: inline-block;
+  width: 20px;
+  text-align: right;
+  margin-right: 5px;
+}
+input{
+  width: 60px;
+}
+.btn-container{
+  display: inline-block;
+  vertical-align: top;
+}
+.btn-up, .btn-down{
+  display: block;
+  width: 10px;
+  height: 9px;
+  border: 1px solid #ccc;
+}

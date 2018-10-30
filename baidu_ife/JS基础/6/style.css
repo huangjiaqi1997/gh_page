@@ -1,0 +1,62 @@
+body, html, div, button, h1, p{
+	margin: 0;
+	padding: 0;
+}
+body{
+	position: relative;
+	width: 100%;
+	height: 2000px;
+}
+#on-btn{
+	display: block;
+	margin: 0 auto;
+	width: 50px;
+}
+#mask{
+	display: none;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+#mask.envisible{
+	display: block;
+}
+.mask-win.envisible{
+  	display: block;
+}
+.mask-win{
+	display: none;
+	position: fixed;
+	width: 400px;
+	height: 200px;
+	background-color: #fff;
+	color: #000;
+	top: 50%;
+	left: 50%;
+	z-index: 1001;
+}
+.off-btn, .mask-win h1{
+	height: 30px;
+	line-height: 30px;
+	background-color: #666;
+	color: #fff;
+}
+.mask-win h1{
+	font-size: 15px;
+	padding-left: 10px;
+}
+.mask-win p{
+	margin: 10px;
+}
+.off-btn{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 80px;
+	margin: 5px;
+	border: none;
+}

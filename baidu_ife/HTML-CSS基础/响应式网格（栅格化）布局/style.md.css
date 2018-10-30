@@ -1,0 +1,17 @@
+/* @media screen and (max-width:768px){ */
+	.md-6{
+		width: 49%;
+	}
+	.md-12{
+		width: 100%;
+	}
+	.md-3{
+		width: 24%;
+	}
+	.md-2{
+		width: 16%;
+	}
+	.md-8{	
+		width: 66%;
+	}
+/* } */

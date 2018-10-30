@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>menu && button && nav</title>   
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--你自己的样式文件 -->
+    <link href="css/myStyle.css" rel="stylesheet">        
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        html{
+            background: #ccc;
+        }
+        body{
+            width: 60%;
+            margin: 10px auto;
+            padding: 10px
+        }
+        </style>
+</head>
+<body>
+<br>
+<h2>下拉菜单</h2>
+<br>
+<pre>
+    div.dropdown(块状)||btn-group(内联)
+        button.btn btn-default dropdown-toggle   data-toggle="dropdown"  id="dropdownMenu1"  type="button"
+            下拉菜单
+            span.caret
+        ul.dropdown-menu  role="menu"  aria-labelledby="dropdownMenu1"
+            li role="presentation"
+                a role="menuitem" tabindex="-1"
+</pre>
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" i"dropdownMenu1" data-toggle="dropdown">
+            下拉菜单
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">苹果</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">香蕉</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">葡萄</a></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <h4>下拉分割线 && 分组标题 && 当前/禁用状态</h4>
+<pre>
+    li.divider           role="presentation"
+
+    li.dropdown-header   role="presentation"
+
+    li.active||disabled  role="presentation"
+</pre>
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" i"dropdownMenu1" data-toggle="dropdown">
+            下拉菜单
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation" class="dropdown-header">水果</li>
+            <li class="active" role="presentation"><a role="menuitem" tabindex="-1" href="#">苹果</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">香蕉</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">蔬菜</li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">豆腐</a></li>
+            <li class="disabled" role="presentation"><a role="menuitem" tabindex="-1" href="#">石头</a></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <h4>右对齐</h4>
+<pre>
+    ul.dropdown-menu dropdown-menu-right   role="menu"  aria-labelledby="dropdownMenu1"
+</pre>
+    <div class="dropdown" style="width:80px">
+        <button class="btn btn-default dropdown-toggle" type="button" i"dropdownMenu1" data-toggle="dropdown">
+            下拉菜单
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">苹果</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">香蕉</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">葡萄</a></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>按钮组</h2>
+    <br>
+<pre>
+    div.btn-group||btn-group-lg||btn-group-sm
+        button.btn btn-default
+            span.glyphicon glyphicon-play
+            ...
+</pre>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-step-backward"></span>
+        </button>
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-backward"></span>
+        </button>
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-play"></span>
+        </button>
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-pause"></span>
+        </button>
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-forward "></span>
+        </button>
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-step-forward"></span>
+        </button>
+    </div>
+    <br>
+    <br>
+    <h4>按钮工具栏</h4>
+<pre>
+    div.btn-toolbar
+        div.btn-group-lg
+        ...
+        div.btn-group-sm
+        ...
+</pre>
+    <div class="btn-toolbar">
+        <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></button>
+        </div>
+        <div class="btn-group btn-group-sm">
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-font"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bold"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-italic"></span></button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h4>按钮组中的下拉菜单</h4>
+<pre>
+    div.btn-group
+
+        div.btn-group
+            button.btn btn-default dropdown-toggle  data-toggle="dropdown"  type="button"
+                关于我们
+                span.caret
+            ul.dropdown-menu
+                ...
+        ...
+</pre>
+    <div class="btn-group">
+        <button class="btn btn-default" type="button">首页</button>
+        <button class="btn btn-default" type="button">产品展示</button>
+        <button class="btn btn-default" type="button">联系我们</button>
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">关于我们
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="##">公司简介</a></li>
+                <li><a href="##">企业文化</a></li>
+                <li><a href="##">组织结构</a></li>
+                <li><a href="##">客服服务</a></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h4>按钮组垂直</h4>
+<pre>
+    div.btn-group-vertical
+</pre>
+    <div class="btn-group-vertical">
+        <button class="btn btn-default" type="button">首页</button>
+        <button class="btn btn-default" type="button">产品展示</button>
+        <button class="btn btn-default" type="button">联系我们</button>
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">关于我们
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="##">公司简介</a></li>
+                <li><a href="##">企业文化</a></li>
+                <li><a href="##">组织结构</a></li>
+                <li><a href="##">客服服务</a></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h4>向上弹起</h4>
+<pre>
+    div.btn-group dropup
+</pre>
+    <div class="btn-group dropup">
+        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">按钮下拉菜单<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="##">苹果</a></li>
+            <li><a href="##">香蕉</a></li>
+            <li><a href="##">橘子</a></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <h4>等分按钮</h4>
+<pre>
+    div.btn-group btn-group-justified
+        a
+        ...
+</pre>
+    <div class="btn-group btn-group-justified">
+        <a class="btn btn-default" href="#">首页</a>
+        <a class="btn btn-default" href="#">产品展示</a>
+        <a class="btn btn-default" href="#">案例分析</a>
+        <a class="btn btn-default" href="#">联系我们</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>导航</h2>
+<pre>
+    ul.nav nav-tabs(标签形)||nav-pills(块状)
+        li.active
+        li.disabled
+</pre>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="##">Home</a></li>
+        <li><a href="##">CSS3</a></li>
+        <li><a href="##">Sass</a></li>
+        <li class="disabled"><a href="##">jQuery</a></li>
+    </ul>
+    <br>
+    <ul class="nav nav-pills">
+        <li class="active"><a href="##">Home</a></li>
+        <li><a href="##">CSS3</a></li>
+        <li><a href="##">Sass</a></li>
+        <li class="disabled"><a href="##">jQuery</a></li>
+    </ul>
+    <br>
+    <br>
+    <h4>垂直导航 && 分隔线</h4>
+<pre>
+    ul.nav nav-pills nav-stacked
+        li.nav-divider
+</pre>
+    <ul class="nav nav-pills nav-stacked">
+        <li><a href="##">Home</a></li>
+        <li><a href="##">CSS3</a></li>
+        <li><a href="##">Sass</a></li>
+        <li class="nav-divider"></li>
+        <li><a href="##">jQuery</a></li>
+    </ul>
+    <br>
+    <br>
+    <h4>自适应导航</h4>
+<pre>
+    ul.nav nav-pills nav-justified
+</pre>
+    <ul class="nav nav-pills nav-justified">
+         <li class="active"><a href="##">Home</a></li>
+         <li><a href="##">CSS3</a></li>
+         <li><a href="##">Sass</a></li>
+         <li><a href="##">jQuery</a></li>
+    </ul>
+    <br>
+    <br>
+    <h4>导航和下拉菜单</h4>
+<pre>
+    li.dropdown
+        a.dropdown-toggle  data-toggle="dropdown"
+            span.caret
+        ul.dropdown-menu
+            ...
+</pre>
+    <ul class="nav nav-pills">
+        <li class="active"><a href="##">首页</a></li>
+        <li class="dropdown">
+            <a href="##" class="dropdown-toggle" data-toggle="dropdown">教程<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="##">CSS3</a></li>
+                <li><a href="##">Sass</a></li>
+                <li><a href="##">jQuery</a></li>
+            </ul>
+        </li>
+        <li><a href="##">关于我们</a></li>
+    </ul>
+    <br>
+    <br>
+    <h4>面包屑式导航</h4>
+<pre>
+    ol.breadcrumb
+</pre>
+    <ol class="breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">我的图书</a></li>
+        <li class="active">《图解CSS3》</li>
+    </ol>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

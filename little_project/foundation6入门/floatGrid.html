@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float grid</title>
+	<link rel="stylesheet" type="text/css" href="foundation-6.3.1-complete/css/foundation.min.css">
+</head>
+<body>
+	<!-- float grid:</p>
+	Mobile First提倡从小屏设计开始
+	Foundation提供响应式的栅格布局 12-column
+	small: < 640px 
+	medium: > 640px && < 1024px 
+	large: > 1024px -->
+
+	<!-- 2 8 2 -->
+	<div class="row">
+		<div class="column large-2 small-2" style="background-color: #3c763d">COLUMN 3</div>
+		<div class="column large-8 small-10" style="background-color: #881f0e">
+			<div class="row">
+				<div class="column small-4" style="background-color: yellow">SUB COLUMN</div>
+				<div class="column small-4" style="background-color: green">SUB COLUMN</div>
+				<div class="column small-4" style="background-color: orange">SUB COLUMN</div>
+			</div>
+		</div>
+		<div class="column large-2 small-12" style="background-color: #0c4d78">COLUMN 3</div>
+	</div>
+
+	<!-- 左右浮动 -->
+	<div class="row">
+		<div class="column large-2" style="background-color: #1893e4">LEFT</div>
+		<div class="column large-5" style="background-color: #3abd76">RIGHT</div>
+	</div>
+
+	<!-- 自动等分、有无边距-->
+	<div class="row large-up-3 small-callapse medium-uncollapse"> 
+		<div class="column">
+			<img src="img/1.png">
+		</div>
+		<div class="column">
+			<img src="img/2.png">
+		</div>
+		<div class="column">
+			<img src="img/3.png">
+		</div>
+	</div>
+</body>
+</html>

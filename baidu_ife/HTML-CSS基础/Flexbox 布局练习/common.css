@@ -1,0 +1,27 @@
+@import url(./style.max640.css) screen and (max-width:640px);
+@import url(./style.min640.css) screen and (min-width:640px);
+body, html, div{
+  margin: 0;
+  padding: 0;
+}
+#container{
+  display: flex;
+}
+#container div{
+  margin: 20px;
+  border: 1px solid #999;
+  width: 150px;
+}
+#container :nth-child(1){
+  height: 120px;
+}
+#container :nth-child(2){
+  height: 100px;
+}
+#container :nth-child(3){
+  height: 40px;
+}
+#container :nth-child(4){
+  height: 200px;
+  border-color: #f00;
+}

@@ -1,0 +1,51 @@
+body,html,p,option,input,div,a,span,form,select{
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-family: "微软雅黑";
+	color: #000;
+	background-color: #fff;
+}
+div.choose-school, div.input-work{
+	display: none;
+}
+div.visible{
+	display: block;
+}
+form{
+	width: 600px;
+	margin: 100px auto;
+}
+input, select, label{
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+}
+div.choose-school,div.input-work{
+	margin-top: 50px;
+}
+input[type="radio"]{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+input.out-school{
+	margin-left: 300px;
+}
+select{
+	width: 250px;
+}
+select:last-of-type{
+	margin-left: 100px;
+}
+input[name='work']{
+	width: 400px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 0 5px;
+	margin-left: 50px;
+}
+input[name='work']:focus{
+	box-shadow: 0 0 10px blue;
+}

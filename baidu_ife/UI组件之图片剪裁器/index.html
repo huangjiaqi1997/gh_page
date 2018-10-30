@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>UI组件之图片剪裁器</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <input type="file" value="选择图片">
+  <!-- <button class="type-1">固定剪裁</button>
+  <button class="type-2">自由剪裁</button>
+  <div class="type-2">
+    宽：<input type="text">
+    高：<input type="text">
+  </div> -->
+  <div class="container">
+    <canvas id="my-cvs"></canvas>
+    <div class="cut-view"></div>
+  </div>
+  <p>图片预览</p>
+  <div class="pre-view">
+    <canvas id="pre-cvs"></canvas>
+  </div>
+<script src="./src/script.js"></script>
+</body>
+</html>

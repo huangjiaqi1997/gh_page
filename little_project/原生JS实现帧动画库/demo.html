@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+	#rabbit{
+		width:102px;
+		height:80px;
+		background-repeat: no-repeat;
+	}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>rabbit</title>
+    <linK rel="stylesheet" href="styles.css" media="screen" />
+</head>
+<body>
+<div id="rabbit"></div>
+<script src="build/animation.js"></script>
+<script>
+var imgURL = 'rabbit-big.png';
+var ele = document.getElementById('rabbit');
+var positions = ['0 -854','-174 -852','-349 -852','-524 -852','-698 -852','-873 -848'];
+var animation = window.animation;
+var repeatAnimation = animation().loadImage([imgUrl]).changePosition(ele,positions,imgURL).repeatForever();
+repeatAnimation.start(80);
+
+	/*var imgURL = 'rabbit-big.png';
+	var ele = document.getElementById('rabbit');
+	var positions = ['0 -854','-174 -852','-349 -852','-524 -852','-698 -852','-873 -848'];
+
+	animation();
+
+	function animation() {
+		ele.style.backgroundImage = 'url('+imgURL+')';
+		ele.style.backgroundImage = 'no-repeat';
+		var index = 0;
+
+		function run() {
+			var position = positions[index].split(' ');
+			ele.style.backgroundPosition = position[0]+'px '+position[1]+'px';
+
+			index++;
+			if(index >= positions.length){
+				index = 0;
+			}
+
+			setTimeout(run, 80);
+		}
+		run();
+	}*/
+</script>
+</body>
+</html>

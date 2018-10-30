@@ -1,0 +1,90 @@
+.control {
+  width: 894px;
+  height: 138px;
+  margin: 0 auto;
+  /* vertical-align: baseline; */
+}
+.control div, .control i {
+  display: inline-block;
+  vertical-align: middle;
+}
+.model-c {
+  margin-top: 5px;
+}
+.model-1 {
+  position: relative;
+}
+.len {
+  position: relative;
+  margin-left: 10px;
+  width: 535px;
+  height: 4px;
+  background-color: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+.bar {
+  position: absolute;
+  top: -4px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.5);  
+}
+.vol-len {
+  position: relative;
+  margin-left: 5px;
+  width: 40px;
+  height: 4px;
+  background-color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  z-index: 10000;
+}
+.vol-len.hidden {
+  display: none;
+}
+
+.vol-bar {
+  position: absolute;
+  top: -3px;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.5);  
+}
+.time {
+  position: absolute;
+  top: -7px;
+  right: 0;
+  font-size: 10px;
+}
+
+
+.model-2 {
+  width: 100px;
+  margin-left: 10px;
+}
+.model-2 i {
+  margin-left: 5px;
+}
+
+
+.model-3 {
+  width: 180px;
+  margin-left: 20px;
+}
+.model-2 i {
+  width: 20px;
+  margin-left: 5px;
+}
+.model-3 i {
+  margin-left: 35px;
+}
+.model-3 i.play {
+  font-size: 20px;
+}
+
+#audio-canvas {
+  margin-left: 10px;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*日历*/
+		.ul-datepicker-wrapper{
+			width: 240px;
+			font-size: 16px;
+			color: #666;
+			box-shadow: 2px 2px 8px 2px rgba(128, 128, 128, .3);
+			position: absolute;
+			display: none;
+		}
+		.ul-datepicker-wrapper-show{
+			display: block;
+		}
+		.ul-datepicker-wrapper .ul-datepicker-header{
+			padding: 0 20px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background-color: #f0f0f0;
+			border-bottom: 1px solid #ccc;
+			font-weight: bold;
+		}
+		.ul-datepicker-wrapper .ul-datepicker-btn{
+			font-family: serif;
+			font-size: 20px;
+			line-height: 50px;
+			text-align: center;
+			cursor: pointer;
+			text-decoration: none;
+			color: forestgreen;
+		}
+		.ul-datepicker-wrapper .ul-datepicker-prev-btn{
+			float: left;
+		}
+		.ul-datepicker-wrapper .ul-datepicker-next-btn{
+			float: right;
+		}
+		.ul-datepicker-wrapper .ul-datepicker-body table{
+			width: 100%;
+			border-collapse: collapse; /*边框重合*/
+		}
+		.ul-datepicker-wrapper .ul-datepicker-body th,
+		.ul-datepicker-wrapper .ul-datepicker-body td{
+			text-align: center;
+			border: 1px solid #f0f0f0;
+			width: 14%;
+			cursor: pointer;
+		}
+		.ul-datepicker-wrapper .ul-datepicker-body th{
+			height: 40px;
+			line-height: 40px;
+			font-size: 12px;
+		}
+		.ul-datepicker-wrapper .ul-datepicker-body td{
+			height: 30px;
+			line-height: 30px;
+			font-size: 10px;
+		}
+
+
+		/*输入框*/
+		.datepicker{
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			padding: 5px;
+			height: 24px;
+			line-height: 24px;
+			width: 230px;
+		}
+		.datepicker:focus{
+			outline: 0 none;
+			border: 1px solid green;
+		}
+	</style>
+</head>
+<body>
+    <input type="text" class="datepicker">
+
+<script src="获取日历所有数据.js"></script>
+<script src="构建日历.js"></script>
+<script>
+	/*var monthData = datepicker.getMonthData(2017, 1);
+	console.log(monthData);*/
+	datepicker.init(document.querySelector('.datepicker'));
+</script>
+</body>
+</html>

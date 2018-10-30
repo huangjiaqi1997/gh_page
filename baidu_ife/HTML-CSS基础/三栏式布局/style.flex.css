@@ -1,0 +1,91 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px/1.5 tahoma,arial,Mcrosoft YaiHei;
+}
+.container, .container div {
+  box-sizing: border-box;
+}
+.team-logo img, .col-3 .logo img{
+  width: 80px;
+  height: 80px;
+}
+.col-1, .col-2, .col-3 {
+  background-color: #fff;
+}
+
+/* 核心代码 */
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+.col-1 {
+  flex-shrink: 0;
+}
+.col-2 {
+  flex: 1;
+}
+
+
+.container {
+  width: 100%;
+  background-color: #eee;
+  border: 1px solid #999;
+  padding: 20px;
+  /*
+  flex-flow：以下二者简写，默认row nowrap
+  flex-direction：指定弹性盒子元素的排列方向。
+  flex-wrap：控制flex容器是单行或者多行。
+
+  align-items：定义项目在交叉轴上如何对齐。（中横）
+  justify-content：定义了项目在主轴上的对齐方式。（中竖）
+  align-content：用于多行的弹性盒模型容器。多根轴线在交叉轴上如何对齐。
+  */
+  display: flex;
+  /* 在横向的flex中，实现子元素高度自适应 */
+  align-items: flex-start;
+}
+
+.col-1 {
+  width: 200px;
+  padding: 20px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+.col-1 .team-logo {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+}
+.col-1 .team-name {
+  vertical-align: top;
+  margin-top: 0;
+  display: inline-block;
+}
+
+/*
+flex: 0 0 auto (none); 
+flex-grow：指定扩展比率 0
+flex-shrink：指定收缩比率 1
+flex-basis：指定缩基准值
+order：设置子元素出現的順序。
+
+align-self：定义项目单独在交叉轴上如何对齐。（中横）
+*/
+.col-2 {
+  margin-right: 20px;
+  padding: 20px;
+  word-break: break-all;
+  text-indent: 2em;
+  flex: 1;
+}
+
+.col-3 {
+  width: 120px;
+  padding-top: 20px;
+}
+.col-3 .logo{
+  margin: 0 20px 20px;
+  width: 80px;
+  height: 80px;
+}

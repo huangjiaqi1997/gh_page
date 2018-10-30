@@ -1,0 +1,70 @@
+.play-list {
+  width: 620px;
+  float: left;
+}
+.list-head {
+  height: 25px;
+  line-height: 25px;
+  overflow: hidden;
+}
+.list-head-l {
+  margin-left: 10px;
+  float: left;
+}
+.list-head-r {
+  margin-right: 10px;
+  float: right;
+}
+.items-container {
+  height: 400px;
+  overflow-y: auto;
+}
+
+
+/* 列表项 */
+.play-item {
+  width: 100%;
+  height: 39px;
+  line-height: 39px;
+  border-top: 1px solid #555555;
+}
+.play-item span {
+  display: inline-block;
+}
+.item-collect {
+  width: 30px;
+  margin-left: 15px;
+}
+.name-singer-wrapper {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.item-name {
+  width: 220px;
+  margin-right: 100px;
+}
+.item-singer {
+  width: 120px;
+  margin-right: 50px;
+}
+.item-share {
+  width: 30px;
+}
+.item-remove {
+  width: 30px;
+  margin-left: 5px;
+}
+
+.play-item.is-play {
+  color: #dadada;
+}
+.play-item.is-play:hover {
+  color: #dadada;
+}
+.play-item:hover {
+  color: #bebdbd;
+}
+a:hover {
+  color: #bebdbd;
+}

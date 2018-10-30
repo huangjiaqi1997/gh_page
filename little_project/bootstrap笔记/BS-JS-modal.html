@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>js-modal</title>   
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--你自己的样式文件 -->
+    <link href="css/myStyle.css" rel="stylesheet">        
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        html{
+            background: #ccc;
+        }
+        body{
+            width: 60%;
+            margin: 10px auto;
+            padding: 10px;
+            padding-top: 60px;
+        }
+        </style>
+</head>
+<body>
+    <h2>Transitions<small> 模态弹出框</h2>
+    <br>
+<pre>
+    data-toggle
+    data-target
+    href
+
+    fade
+    data-backdrop
+    data-keyboard
+    data-show
+
+    modal-lg/sm
+
+    JS触发
+</pre>
+    
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#bs-modal">点击我(btn)</button>
+    <a href="#bs-modal" data-toggle="modal" class="btn btn-primary">点击我(a)</a><br><br>
+
+    <!-- 弹窗 -->
+    <div class="modal fade" id="bs-modal" data-backdrop="false" data-keyboard="true" data-show="true" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <!-- 添加modal-lg/modal-sm改变大小 -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">模态弹出窗标题</h4>
+                </div>
+                <div class="modal-body">
+                    <p>模态弹出窗主体内容</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary JSBtn" type="button">点击我(btn)</button>
+
+    <!-- 弹窗 -->
+    <div class="modal fade" id="bs-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <!-- 添加modal-lg/modal-sm改变大小 -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">模态弹出窗标题</h4>
+                </div>
+                <div class="modal-body">
+                    <p>模态弹出窗主体内容</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    /*{
+        backdrop
+        keyboard
+        show
+        remote
+    }
+    $(".JSBtn").click("toggle"hide show)
+    $(".JSBtn").on('hidden.bs.modal', function (e) {}*/
+
+    $(function(){
+        $(".JSBtn").click(function(){
+            $("#bs-modal").modal({
+                backdrop: false,
+                keyboard: true,
+                show: true,
+                remote:''
+            });
+        });
+        $(".JSBtn").on('show.bs.modal', function (e) {
+            alert(2);
+        });
+    });
+</script>
+</body>
+</html>
+</body>
+</html>

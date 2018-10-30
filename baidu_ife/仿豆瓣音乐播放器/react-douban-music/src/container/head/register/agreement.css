@@ -1,0 +1,7 @@
+.agmt-c {
+  overflow-y: auto;
+  font-size: 10px;
+  line-height: 18px;
+  height: 200px;
+  border: 1px solid #ccc;
+}

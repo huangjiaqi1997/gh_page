@@ -1,0 +1,41 @@
+li.li-contain::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  left: -15px;
+  top: 2px;
+  transform: rotate(45deg);
+  transition: transform 0.2s
+}
+li.li-contain.open::before {
+  transform: rotate(135deg)
+}
+
+
+
+li {
+  position: relative;
+  list-style: none;
+  height: 30px;
+  transition: height 0.2s;
+  cursor: pointer;
+}
+/* 
+ul 加 show
+li.li-contain 加 open
+非 ul.show 的 li 隐藏
+ */
+ul:not([class~="show"])>li {
+  height: 0;
+  overflow: hidden;
+}
+
+ul:first-child>li  {
+  height: 30px;
+  overflow: visible;
+}
+

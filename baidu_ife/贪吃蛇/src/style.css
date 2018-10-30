@@ -1,0 +1,28 @@
+table, tr, td, body {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td {
+  box-sizing: border-box;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #ccc;
+ 
+}
+#wrapper {
+  position: relative;
+}
+#food, #head, #div2 {
+  position: absolute;
+  background-color: #666;
+  width: 15.2px;
+  height: 15.2px;
+}
+#div2 {
+  top: 15.2px;
+}

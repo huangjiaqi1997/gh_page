@@ -1,0 +1,68 @@
+body, form, div, input, label{
+	margin: 0;
+	padding: 0;
+}
+body{
+	color: #000;
+	background-color: #fff;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+div{
+	margin: 100px auto;
+	width: 450px;
+}
+label, input{
+	line-height: 40px;
+	font-size: 20px;
+	height: 40px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+label{
+	font-weight: 700;
+	margin-right: 20px;
+	border: none;
+	width: 60px;
+}
+input[name="name"]{
+	width: 300px;
+	margin-right: 20px;
+	padding-left: 5px;
+}
+input[name="test"]{
+	width: 60px;
+	color: #fff;
+	background-color: #1e90ff;
+	outline: none;
+	cursor: pointer;
+}
+input.normal{
+	box-shadow: 0 0 10px #1e90ff;
+}
+p{
+	text-align: left;
+	font-size: 16px;
+	color: #ccc;
+	margin-left: 60px;
+	margin-top: 10px;
+}
+
+input.warning{
+	box-shadow: 0 0 10px red;
+}
+p.warning{
+	color: red;
+}
+input.success{
+	box-shadow: 0 0 10px green;
+}
+p.success{
+	color: green;
+}
+input.wrong{
+	box-shadow: 0 0 10px #ff8c00;
+}
+p.wrong{
+	color: #ff8c00;
+}

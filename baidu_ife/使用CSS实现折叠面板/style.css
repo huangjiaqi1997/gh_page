@@ -1,0 +1,48 @@
+body {
+  padding: 20px;
+}
+label, input, p{
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 用not选择器 + 兄弟相邻选择器实现未被选中的项隐藏 */
+/* 将div（段落）高度设为0 ~ 80px，实现动画 */
+/* 设置了border-box属性后，元素设置了内边距并且高度设置为0时，元素的高度仍等于内边距 */
+
+input {
+  display: none;
+}
+input:not(:checked)+div {
+ height: 0;
+}
+input:checked+div {
+  height: 80px;
+}
+
+
+.wrapper {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1 1 rgba(0,0,0,.05);
+  margin-bottom: 5px;
+  width: 500px;
+}
+label {
+  display: block;
+  border-bottom: 1px solid #ccc;
+  background-color: #f5f5f5;
+  font-size: 18px;
+  line-height: 30px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+p {
+  padding: 10px;
+  font-size: 16px;
+}
+.wrapper div {
+  overflow: hidden;
+  transition: height 0.5s;
+}

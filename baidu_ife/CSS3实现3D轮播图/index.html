@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS3 实现 3D 轮播图</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="image">
+      <img src="./img/1.jpg" alt="">
+    </div>
+    <div class="image">
+      <img src="./img/2.jpg" alt="">
+    </div>
+    <div class="image">
+      <img src="./img/3.jpg" alt="">
+    </div>
+    <div class="image">
+      <img src="./img/4.jpg" alt="">
+    </div>
+        <div class="image">
+      <img src="./img/5.jpg" alt="">
+    </div>
+    <div class="image">
+      <img src="./img/6.jpg" alt="">
+    </div>
+  </div>
+    
+<script>
+window.onload = function() {
+  var images = document.getElementsByClassName('image');
+  var animateIndexArr = [];
+  var imgLen = images.length;
+  for (var i = 0; i < imgLen; i++) {
+    animateIndexArr.push(i + 1)
+  }
+  console.log(animateIndexArr);
+
+  setInterval(function() {
+    for (var i = 0; i < imgLen; i++) {
+      images[i].style.animation = `animate${animateIndexArr[i]} 0.5s forwards`;
+    }
+
+    animateIndexArr.push(animateIndexArr.shift()); // 第二轮时第一个image运行第二个动画
+  }, 2000);
+};
+</script>
+</body>
+</html>

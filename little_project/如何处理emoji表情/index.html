@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>如何处理emoji表情</title>
+  <link href="http://cdn.staticfile.org/emoji/0.2.2/emoji.css" rel="stylesheet" type="text/css" />
+  <script src="http://cdn.staticfile.org/emoji/0.2.2/emoji.js"></script>
+</head>
+<body>
+  <a href="https://github.com/node-modules/emoji">https://github.com/node-modules/emoji</a>
+  <div class="emojiText"></div>
+<script>
+  var text = document.querySelector('.emojiText');
+  console.log(jEmoji.unifiedToHTML(text.value));
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.side>div {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.side {
+  float: left;
+  height: 425px;
+  width: 208px;
+  margin-left: 40px;
+  text-align: center;
+}
+img {
+  width: 150px;
+}
+.singer-name {
+  font-size: 14px;
+}
+.singer-info {
+  border-bottom: 1px #ccc;
+}
+.open-lrc {
+  margin-top: 10px;
+}
+
+
+.lrc-container {
+  width: 100%;
+}
+.close-lrc {
+  height: 25px;
+  width: 100%;
+  line-height: 25px;
+  margin-bottom: 1px solid #ccc;
+}
+.lrc {
+  font-size: 11px;
+  line-height: 20px;
+}
+

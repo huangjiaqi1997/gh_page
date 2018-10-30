@@ -1,0 +1,27 @@
+input{
+  display: none;
+}
+/* label带有for属性时，点击label就会勾选对应的input */
+label{
+  margin-left: 40px;
+  position: relative;
+
+}
+label::before{
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgb(94, 150, 165);
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+input[type="radio"]:checked+label::after, input[type="checkbox"]:checked+label::after{
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: rgb(94, 150, 165);
+  position: absolute;
+  left: -16px;
+  top: 4px;
+}

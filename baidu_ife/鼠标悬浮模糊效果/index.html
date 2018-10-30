@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>鼠标悬浮模糊效果</title>
+  <style>
+    /* 背景悬浮模糊 */
+    .container, .pic{
+      width: 200px;
+      height: 200px;
+    }
+    .container{
+      position: relative;
+    }
+    .container>div{
+      position: absolute;
+    }
+    .pic{
+      z-index: -10000; /* 背景div在同级下设置z-indexwei负 */
+      left: 0;
+      top: 0;
+      background: url(./2015.jpeg) 50% 50%/cover no-repeat;
+      transition: all 0.5s;
+    }
+    .container:hover .pic{
+      -webkit-filter: blur(2px);
+       -moz-filter: blur(2px);
+        -ms-filter: blur(2px);    
+            filter: blur(2px);
+    }
+
+    
+    /* 两个隐藏div的悬浮边框变化 */
+    .row{
+      top: 18px;
+      left: 50%;
+      width: 0;
+      height: 160px;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transition: width,left 2s,2s;
+    }
+    .col{
+      top: 50%;
+      left: 8px;
+      width: 180px;
+      height: 0;
+      border-right: 2px solid #fff;
+      border-left: 2px solid #fff;
+      transition: height,top 2s,2s;
+    }
+    .container:hover .row{
+      width: 180px;
+      left: 10px;
+    }
+    .container:hover .col{
+      height: 160px;
+      top: 20px;
+    }
+
+
+    /* 文字流光渐变效果 */
+    h1{
+      font: 25px '微软雅黑';
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      bottom: 50px;
+      opacity: 0;
+      transition: opacity,bottom 2s,0.5s; 
+      /* 黄色是动态颜色，随背景位置变化 */
+      background-image: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+
+      -webkit-background-size: 200% 100%;
+      -webkit-animation: masked-animation 4s infinite linear;
+    } 
+
+    @-webkit-keyframes masked-animation {
+      0%  { background-position: 0 0;}
+      100% { background-position: -100% 0;}
+    }
+
+    .container:hover h1{
+      opacity: 1;
+      bottom: 70px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>渐变文字效果</h1>
+    <div class="pic"></div>
+    <div class="row"></div>
+    <div class="col"></div>
+  </div>
+</body>
+</html>

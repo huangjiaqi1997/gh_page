@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .img-container, [contenteditable="true"] {
+      width:200px;height:200px;border:1px solid #999
+    }
+  </style>
+  <title>本地文件操作与上传</title>
+</head>
+<body>
+<h1>方法一：</h1>
+<form action="">
+  <input type="file" id="file-input" name="fileContent">
+</form>
+<h1>方法二：</h1>
+<div class="img-container">
+  <p>drop your image here</p>
+</div>
+<h1>方法三：</h1>
+<div contenteditable="true" id="editor">
+  hello, paste your image here
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>

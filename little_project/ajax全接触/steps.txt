@@ -1,0 +1,11 @@
+运行PHP：
+
+用XAMMP启动服务器 https://www.apachefriends.org/download.html
+
+在Dreamweaver中创建站点。
+
+在D:\xampp\htdocs\ajaxdemo中创建php，用fiddler测试
+
+创建客户端html，在Dreamweaver中调试
+
+在线json校检工具：JSONLint

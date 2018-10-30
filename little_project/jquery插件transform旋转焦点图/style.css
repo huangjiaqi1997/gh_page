@@ -1,0 +1,62 @@
+body,div,ul,li,a,h2{
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei";
+}
+.mainBox{
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+.mainBox ul li{
+    float: left;
+    list-style-type: none;
+    width: 200px;
+    height: 370px;
+    overflow: hidden;
+    border: 20px solid #fff;
+    margin-left: -40px;
+    position: relative;
+}
+.mainBox ul li img{
+    position: absolute;
+}
+.mainBox h2{
+    position: absolute;
+    bottom: 80px;
+    right: 50px;
+    background-color: rgba(255,255,255,0.6);
+    padding: 3px;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+.mainBox .butBox a{
+    position: absolute;
+    opacity: 0.8;
+    text-decoration: none;
+}
+.mainBox .butBox a:hover{
+    opacity: 1;
+}
+.mainBox .butBox .butLeft{
+    top: 165px;
+    left: 20px;
+    color: #fff;
+    font-size: 40px;
+}
+.mainBox .butBox .butRight{
+    top: 165px;
+    right: 20px;
+    color: #fff;
+    font-size: 40px;
+}
+.mainBox .butBox .butPlay{
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 0px;
+    left: 0px;
+    color: #999;
+    background: url("img/play.png") no-repeat;
+    text-indent: 20px;
+}

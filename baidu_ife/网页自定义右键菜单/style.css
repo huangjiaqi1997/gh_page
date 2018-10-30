@@ -1,0 +1,16 @@
+.custom-menu {
+  position: absolute;
+  visibility: hidden;
+  border: 1px solid #888;
+  width: 140px;
+  padding-left: 0;
+  margin: 0;
+}
+.custom-menu li {
+  list-style-type: none;
+  padding-left: 30px;
+}
+.custom-menu li:hover {
+  cursor: pointer;
+  background-color: #eeeeee;
+}

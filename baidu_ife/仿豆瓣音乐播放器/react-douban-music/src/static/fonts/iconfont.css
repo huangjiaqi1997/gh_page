@@ -1,0 +1,41 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1510470764414'); /* IE9*/
+  src: url('iconfont.eot?t=1510470764414#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('iconfont.ttf?t=1510470764414') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1510470764414#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family:"iconfont" !important;
+  font-size:12px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-prev:before { content: "\e63c"; }
+
+.icon-next:before { content: "\e63d"; }
+
+.icon-play:before { content: "\f006c"; }
+
+.icon-vol:before { content: "\e609"; }
+
+.icon-one-repeat:before { content: "\e61d"; }
+
+.icon-collected:before { content: "\e501"; }
+
+.icon-no-collected:before { content: "\e643"; }
+
+.icon-list-repeat:before { content: "\e662"; }
+
+.icon-nextpage:before { content: "\e60e"; }
+
+.icon-no-vol:before { content: "\e61e"; }
+
+.icon-random:before { content: "\e607"; }
+
+.icon-pause:before { content: "\e74f"; }
+

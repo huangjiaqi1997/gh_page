@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>form && img && icon</title>   
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--你自己的样式文件 -->
+    <link href="css/myStyle.css" rel="stylesheet">        
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        html{
+            background: #ccc;
+        }
+        body{
+            width: 60%;
+            margin: 0 auto;
+            padding: 10px
+        }
+        </style>
+</head>
+<body>
+	<h2>表单</h2>
+    <h4>基础表单</h4>
+<pre>
+    form role="form"
+        div.form-group
+            label
+            input
+        div.checkbox
+            label
+                input
+        buton
+</pre>
+    <form role="form">
+        <div class="form-group">
+            <label for="exampleInputEmail1">邮箱:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入您的邮箱地址">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">密码:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入您的邮箱密码">
+        </div>
+        <div class="checkbox">
+            <label>
+            <input type="checkbox"> 记住密码
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">进入邮箱</button>
+    </form>
+    <br>
+    <br>
+    <h4>水平表单</h4>
+<pre>
+    form.horizontal  role="form"
+</pre>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">邮箱:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="请输入您的邮箱地址">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">密码:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="请输入您的邮箱密码">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 记住密码
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">进入邮箱</button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <br>
+    <h4>内联表单</h4>
+<pre>
+    form.form-inline
+</pre>
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <label for="exampleInputEmail2">邮箱:</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="请输入你的邮箱地址">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">密码:</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="请输入你的邮箱密码">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> 记住密码
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">进入邮箱</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h4>输入框</h4>
+<pre>
+    input.*form-control  *type="XXX"  id  placeholder
+</pre>
+    <div class="form-group">
+        <label for="email">邮箱:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <br>
+    <br>
+    <h4>隐藏标签</h4>
+<pre>
+     label.sr-only
+</pre>
+    <form role="form">
+        <div class="form-group">
+            <label class="sr-only" for="">邮箱:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+    <br>
+    <br>
+    <h4>复选框</h4>
+<pre>
+    div.checkbox
+        label(.checkbox-inline)
+            input  *type="checkbox" value
+            记住密码
+</pre>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">
+                记住密码
+            </label>
+        </div>
+        <br>
+        <div class="checkbox">
+            <label class="checkbox-inline"><input type="checkbox"  value="option1">游戏</label>
+            <label class="checkbox-inline"><input type="checkbox"  value="option2">摄影</label>
+        </div>
+        <br>
+        <br>
+        <h4>单选框</h4>
+<pre>
+    div.radio
+        label(.radio-inline)
+            input  *type="radio"  name  id  value  checked
+            喜欢
+    div.radio
+        label
+            ...
+</pre>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="oR1" value="love" checked>
+                喜欢
+            </label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="optionsRadios" id="oR2" value="hate">
+                不喜欢
+            </label>
+        </div>
+        <br>
+        <div class="radio">
+            <label class="radio-inline">
+                <input type="radio"  value="option1" name="sex">
+                男性
+            </label>
+            <label class="radio-inline">
+                <input type="radio"  value="option2" name="sex">
+                女性
+            </label>
+        </div>
+        <br>
+        <br>
+        <h4>下拉框</h4>
+<pre>
+    select.form-control  (multiple)
+        option
+        ...
+</pre>
+        <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+        <br>
+        <select multiple class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+        </select>
+        <br>
+        <br>
+        <h4>文本区</h4>
+<pre>
+    textarea.form-control  rows="3"
+</pre>
+        <textarea class="form-control" rows="3"></textarea>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4>按钮颜色</h4>
+<pre>
+    button.btn btn-default
+</pre>
+        <button class="btn btn-default" type="button">默认按钮.btn-default</button> <br>
+        <button class="btn btn-primary" type="button">主要按钮.btn-primary</button> <br>
+        <button class="btn btn-success" type="button">成功按钮.btn-success</button> <br>
+        <button class="btn btn-info" type="button">信息按钮.btn-info</button> <br>
+        <button class="btn btn-warning" type="button">警告按钮.btn-warning</button> <br>
+        <button class="btn btn-danger" type="button">危险按钮.btn-danger</button> <br>
+        <button class="btn btn-link" type="button">链接按钮.btn-link</button> <br>
+        <br>
+        <br>
+        <h4>其他标签按钮</h4>
+        <input type="submit" class="btn btn-default" value="input标签按钮"/> <br>
+        <a href="##" class="btn btn-default">a标签按钮</a><br>
+        <span class="btn btn-default">span标签按钮</span><br>
+        <div class="btn btn-default">div标签按钮</div><br>
+        <br>
+        <br>
+        <h4>按钮大小</h4>
+        <button class="btn btn-primary btn-lg" type="button">大型按钮.btn-lg</button> <br>
+        <button class="btn btn-primary" type="button">正常按钮</button><br>
+        <button class="btn btn-primary btn-sm" type="button">小型按钮.btn-sm</button><br>
+        <button class="btn btn-primary btn-xs" type="button">超小型按钮.btn-xs</button><br>
+        <br>
+        <br>
+        <h4>块级按钮</h4>
+        <button class="btn btn-primary btn-block" type="button">块级按钮.btn-block</button>
+        <br>
+        <br>
+        <h4>按钮禁用</h4>
+<pre>
+    button disabled 不会禁用默认行为
+
+    button.disabled 可禁止默认行为
+</pre>
+        <button class="btn btn-primary" type="button" disabled>按钮</button>
+        <br>
+        <br>
+        <button class="btn btn-primary disabled" type="button">按钮</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h4>控件大小</h4>
+<pre>
+    input
+    select
+    textarea
+    button .lg || .sm
+</pre>
+    <input class="form-control input-lg" type="text" placeholder="添加.input-lg，控件变大"><br>
+    <input class="form-control" type="text" placeholder="正常大小"> <br>
+    <input class="form-control input-sm" type="text" placeholder="添加.input-sm，控件变小"><br>
+    <br>
+    <br>
+    <h4>表单禁用</h4>
+<pre>
+    input.form-control  type  id  placeholder  *disabled
+</pre>
+    <input type="text" id="disabledTextInput" class="form-control" placeholder="禁止输入" disabled>
+    <br>
+    <br>
+<pre>
+    fieldset disabled
+        ...
+</pre>
+    <fieldset disabled>
+        <legend><input type="text" class="form-control" placeholder="legend内，仍没被禁用"></legend>
+        <textarea class="form-control" rows="3"></textarea>
+    </fieldset>
+    <br>
+    <br>
+    <h4>表单提示</h4>
+<pre>
+     div.form-group has-success has-feedback
+        label
+        input
+        span.glyphicon glyphicon-ok form-control-feedback
+        span.help-block
+</pre>
+    <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputSuccess1">成功状态</label>
+        <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+        <span class="help-block">表单提示信息</span>
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      </div>
+      <div class="form-group has-warning has-feedback">
+        <label class="control-label" for="inputWarning1">警告状态</label>
+        <input type="text" class="form-control" id="inputWarning1" placeholder="警告状态">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+      </div>
+      <div class="form-group has-error has-feedback">
+        <label class="control-label" for="inputError1">错误状态</label>
+        <input type="text" class="form-control" id="inputError1" placeholder="错误状态">
+        <span class="glyphicon glyphicon-remove form-control-feedback"></span>  
+      </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>图片</h2>
+        <br>
+<pre>
+    默认图片
+    圆角图片    img.img-rounded 
+    圆形图片    img.img-circle
+    缩略图      img.img-thumbnail
+    响应式图片  img.img-responsive
+</pre>
+    <div>
+      <img   alt="140x140" src="http://placehold.it/140x140">
+      </div>
+      <br>
+      
+      <div>
+      <img  class="img-rounded" alt="140x140" src="http://placehold.it/140x140"> </div><br>
+      
+       <div>
+      <img  class="img-circle" alt="140x140" src="http://placehold.it/140x140"></div>
+      
+      <div>
+          <img  class="img-thumbnail" alt="140x140" src="http://placehold.it/140x140">  </div><br>
+      
+      <div>
+          <img  class="img-responsive" alt="140x140" src="http://placehold.it/140x140" /> </div><br>
+    <br>
+    <br>
+    <h4>icon</h4>
+<pre>
+    span.glyphicon glyphicon-search
+</pre>
+  <span class="glyphicon glyphicon-search"></span>
+  <span class="glyphicon glyphicon-asterisk"></span>
+  <span class="glyphicon glyphicon-plus"></span>
+  <span class="glyphicon glyphicon-cloud"></span>
+  <br>
+  <br>
+  <a href="http://getbootstrap.com/components/#glyphicons">http://getbootstrap.com/components/#glyphicons<a>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

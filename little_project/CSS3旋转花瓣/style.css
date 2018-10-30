@@ -1,0 +1,15 @@
+.icon-leaf::before {
+  font-size: 120px;
+}
+.icon-leaf {
+  /* 设置背景图片的方式更简便，但无法改变图像的颜色 */
+  /* background: url(./img/leaf.svg) 50% 50%/cover no-repeat ; */
+  display: block;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -120px;
+  margin-left: -60px;
+}

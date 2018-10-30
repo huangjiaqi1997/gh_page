@@ -1,0 +1,65 @@
+ 
+/* y竖，x横，z穿心 
+/* rotateX()
+/* rotateY()
+/* rotateZ()
+/* perspective（父），观察距离；或（子）transform: perspective(600px) rotateY(45deg)
+/* translateZ 元素离近离远
+/* perspective-origin: top（父）*/
+
+.container {
+  transform-style: preserve-3d;
+  perspective: 600px;
+  perspective-origin: 50% 50%; /* 父元素设置宽高才有效 */
+  position: relative;
+  width: 1px;
+  height: 300px;
+  left: 50%;
+}
+.image {
+  position: absolute;
+  left: -240px; /* 以父元素的左边为水平轴，left-240相当于x原点 */
+}
+.image:nth-child(1) {
+  transform: translateZ(0) translateX(0) rotateY(0deg);
+}
+.image:nth-child(2) {
+  transform: translateZ(-400px) translateX(700px) rotateY(60deg);
+}
+.image:nth-child(3) {
+  transform: translateZ(-1200px) translateX(700px) rotateY(120deg);
+}
+.image:nth-child(4) {
+  transform: translateZ(-1600px) translateX(0) rotateY(180deg);
+}
+
+.image:nth-child(5) {
+  transform: translateZ(-1200px) translateX(-700px) rotateY(240deg);
+}
+.image:nth-child(6) {
+  transform: translateZ(-400px) translateX(-700px) rotateY(300deg);
+}
+@keyframes animate1 {
+  0% {transform: translateZ(0) translateX(0) rotateY(0deg);}
+  100% {transform: translateZ(-400px) translateX(700px) rotateY(60deg);}
+}
+@keyframes animate2 {
+  0% {transform: translateZ(-400px) translateX(700px) rotateY(60deg);}
+  100% {transform: translateZ(-1200px) translateX(700px) rotateY(120deg);}
+}
+@keyframes animate3 {
+  0% {transform: translateZ(-1200px) translateX(700px) rotateY(120deg);}
+  100% {transform: translateZ(-1600px) translateX(0) rotateY(180deg);}
+}
+@keyframes animate4 {
+  0% {transform: translateZ(-1600px) translateX(0) rotateY(180deg);}
+  100% {transform: translateZ(-1200px) translateX(-700px) rotateY(240deg);}
+}
+@keyframes animate5 {
+  0% {transform: translateZ(-1200px) translateX(-700px) rotateY(240deg);}
+  100% {transform: translateZ(-400px) translateX(-700px) rotateY(300deg);}
+}
+@keyframes animate6 {
+  0% {transform: translateZ(-400px) translateX(-700px) rotateY(300deg);}
+  100% {transform: translateZ(0) translateX(0) rotateY(360deg);}
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<ul class="small-group">
+    <li><img src="img/images/1-1.jpg" class="js-lb" data-role="lb" data-source="img/images/1-1.jpg" data-group="1" data-id="g1-1" data-caption="长河落日圆"></li>
+    <li><img src="img/images/1-2.jpg" class="js-lb" data-role="lb" data-source="img/images/1-2.jpg" data-group="1" data-id="g1-2" data-caption="大树瀑布和悬崖"></li>
+    <li><img src="img/images/HJB.jpg" class="js-lb" data-role="lb" data-source="img/images/HJB.jpg" data-group="1" data-id="g1-3" data-caption="滑稽币"></li>
+</ul>
+<ul class="small-group">
+    <li><img src="img/images/2-1.jpg" class="js-lb" data-role="lb" data-source="img/images/2-1.jpg" data-group="2" data-id="g2-1" data-caption="第二组"></li>
+</ul>
+<div id="lb-mask"></div>
+<div id="lb-container">
+    <div class="lb-show-div">
+        <img class="lb-show-pic" src="img/images/1-1.jpg">
+        <span class="lb-btn lb-prev-btn"></span>
+        <span class="lb-btn lb-next-btn"></span>
+    </div>
+    <div class="lb-side">
+        <div class="lb-side-div">
+            <p class="lb-side-div-desc"></p>
+            <span class="lb-side-div-index"></span>
+        </div>
+        <span class="lb-side-close"></span>
+    </div>
+</div>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/script.js"></script>
+<script>
+    var lb = new LightBox({
+        speed: 100,
+        maxW: 900,
+        maxH: 600
+    });
+</script>
+</body>
+</html>

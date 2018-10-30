@@ -1,0 +1,112 @@
+html, body, div, span, input{
+	margin: 0;
+	padding: 0;
+}
+*{
+	box-sizing: border-box;
+}
+body{
+	font: 20px "微软雅黑";
+	background-color: #fff;
+	color: #000;
+}
+.container{
+	max-width: 800px;
+	margin: 20px auto;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+.container>div{
+	float: left;
+	height: 400px;
+}
+.light-color, .hue-color{
+	margin-right: 2%;
+	border: 1px solid #ccc;
+	position: relative;
+}
+.light-color{
+	width: 50%;
+}
+.hue-color{
+	width: 5%;
+	/*background: -webkit-linear-gradient(180deg, red, blue); Safari 5.1 - 6.0
+	background: -o-linear-gradient(180deg, red, blue); Opera 11.1 - 12.0
+	background: -moz-linear-gradient(to bottom, red, blue); Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom, rgb(255,0,0), rgb(255,255,0), rgb(0,255,0), rgb(0,255,255), rgb(0,255,255), rgb(0,0,255), rgb(255,0,255), rgb(255,0,0)); /* 标准的语法 */
+}
+.color-value{
+	width: 200px;
+	border: 1px solid #ccc;
+	height: 700px;
+}
+
+.RGB, .HSL{
+	height: 160px;
+}
+.RGB>div, .HSL>div{
+	margin: 10px 0 10px 10px;
+	position: relative;
+	/* overflow: hidden; */
+}
+.HEX{
+	margin: 0 0 0 10px;
+	overflow: hidden;
+}
+/*.RGB>div>*, .HSL>div>*{}*/
+.RGB{
+	border-bottom: 1px solid #ccc;
+}
+label{
+	display: inline-block;
+	height: 40px;
+	width: 20px;
+	text-align: center;
+	margin-right: 5px;
+	line-height: 40px;
+}
+.HEX label{
+	width: 35px;
+}
+input[type="text"]{
+	border: 1px solid #ccc;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 5px;
+	width: 100px;
+	border-radius: 3px;
+	font-size: 20px;
+}
+
+.icon-up, .icon-down{
+	display: inline-block;
+	position: absolute;
+	left: 130px;
+	width: 30px;
+	height: 20px;
+	border-right: 1px solid #ccc;
+}
+.icon-up{
+	top: 0;
+	border-top: 1px solid #ccc;
+}
+.icon-down{
+	top: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.hue-selection, .light-selection{
+	position: absolute;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color: rgba(0, 0, 0, 0);
+	display: block;
+	border: 5px solid red;
+}
+.hue-selection{
+	margin: 0 auto;
+	top: 100px;
+	left: 20%;	
+}

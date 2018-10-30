@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>grid</title>   
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--你自己的样式文件 -->
+    <link href="css/myStyle.css" rel="stylesheet">        
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        html{
+            background: #ccc;
+        }
+        body{
+            width: 60%;
+            margin: 10px auto;
+            padding: 10px
+        }
+        [class *= col-]{
+            background-color: #eee;
+            border: 1px solid #ccc;
+        }
+        .container{
+            width: 100%;
+        }
+        </style>
+</head>
+<body>
+<pre>
+    < 768px         .col-xs
+    768px < 992px   .col-sm
+    992px < 1200px  .col-md
+    > 1200px        .col-lg
+</pre>
+    <h2>网格</h2>
+<br>
+<pre>
+    div.row
+        div.col-md-x
+        div.col-md-y
+        div.col-md-(12 - x -y)
+</pre>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-8">.col-md-8</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">.col-md-3</div>
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-3">.col-md-3</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">.col-md-3</div>
+            <div class="col-md-3">.col-md-3</div>
+            <div class="col-md-3">.col-md-3</div>
+            <div class="col-md-3">.col-md-3</div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h4>列向右偏移</h4>
+<pre>
+    div.col-md-x *col-md-offset-y
+</pre>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-2 col-md-offset-2">右移两列</div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h4>列排序</h4>
+<pre>
+    div class.col-md-4 col-md-push-8 (->)
+    div.col-md-8 col-md-pull-4 (<-)
+</pre>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-push-8">A</div>
+            <div class="col-md-8 col-md-pull-4">B</div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h4>嵌套</h4>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">col-md-4</div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6">col-md-6</div>
+                    <div class="col-md-6">col-md-6</div>
+                </div>
+            </div>
+        <div class="col-md-4">col-md-4</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px/1.5 tahoma,arial,Mcrosoft YaiHei;
+}
+.container, .container div {
+  box-sizing: border-box;
+}
+.team-logo img, .col-3 .logo img{
+  width: 80px;
+  height: 80px;
+}
+.col-1, .col-2, .col-3 {
+  background-color: #fff;
+}
+
+/* 核心代码 */
+.container {
+  overflow: hidden;
+}
+.col-1-2-c {
+  overflow: hidden;
+  margin-right: 120px;
+}
+.col-1 {
+  float: left;
+}
+.col-2 {
+  margin-left: 220px;
+}
+.col-3 {
+  float: right;
+}
+
+
+.container {
+  width: 100%;
+  background-color: #eee;
+  border: 1px solid #999;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.col-1 {
+  width: 200px;
+  padding: 20px;
+  margin-right: 20px;
+  float: left;
+}
+.col-1 .team-logo {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+}
+.col-1 .team-name {
+  vertical-align: top;
+  margin-top: 0;
+  display: inline-block;
+}
+
+.col-2 {
+  margin-right: 20px;
+  padding: 20px;
+  word-break: break-all;
+  text-indent: 2em;
+  margin-left: 220px;
+}
+
+.col-3 {
+  width: 120px;
+  padding-top: 20px;
+  float: right;
+}
+.col-3 .logo{
+  margin: 0 20px 20px;
+  width: 80px;
+  height: 80px;
+}

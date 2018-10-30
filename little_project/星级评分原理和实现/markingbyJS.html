@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>StarMarkingByJS</title>
+	<style>
+		body, ul, li{
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			list-style-type: none;
+		}
+		.rating, .rating-display{
+			background: url(img/star.png);
+		}
+		.rating{
+			position: relative;
+			width: 95px;
+			margin: 100px auto;
+		}
+		.rating-display{
+			width: 0;
+			height: 19px;
+			background-position: 0 -28px; 
+		}
+		.rating-mask{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%；
+		}
+		.rating-item{
+			float: left;
+			width: 19px;
+			height: 19px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<!-- 铺满熄灭的星星 -->
+	<div class="rating" id=rating>
+
+		<!--&lt;!&ndash; 覆盖上级div，铺满点亮的星星，长度随鼠标移动变化 &ndash;&gt;-->
+		<!--<div class="rating-display"></div>-->
+
+		<!--&lt;!&ndash; 最上层，监听鼠标的移动 &ndash;&gt;-->
+		<!--<ul class="rating-mask">-->
+			<!--<li class="rating-item"></li>-->
+			<!--<li class="rating-item"></li>-->
+			<!--<li class="rating-item"></li>-->
+			<!--<li class="rating-item"></li>-->
+			<!--<li class="rating-item"></li>-->
+		<!--</ul>-->
+
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	var rating = (function () {
+	    //策略
+        var strategies = {
+            entire: function () {
+                return 1;
+            },
+            half: function () {
+                return 2;
+            },
+            quarter: function () {
+                return 4;
+            }
+        };
+
+
+		var Rating = function (el, opts) {
+		    this.$el = $(el);
+		    this.opts = $.extend({}, Rating.DEFAULTS, opts);
+
+            //点燃半颗星星，li标签翻倍
+            if (!strategies[this.opts.mode]){
+                this.opts.mode = Rating.DEFAULTS.opts.mode;
+            }
+		    this.ratio = strategies[this.opts.mode]();
+		    this.opts.total *= this.ratio;
+		    this.opts.num *= this.ratio;
+
+		    this.itemWidth = 19 / this.ratio;
+		    this.displayWidth = this.opts.num * this.itemWidth;
+		};
+		Rating.DEFAULTS = {
+		    mode: 'entire',
+		    total: 5,
+            num: 2,
+            readOnly: false,
+            select: function () {
+                
+            },
+            chosen: function () {
+                
+            }
+		};
+
+
+		Rating.prototype.init = function () {
+			this.buildHTML();
+			this.setCSS();
+			if (!this.opts.readOnly) {
+			    this.bindEvent();
+            }
+		};
+
+
+		Rating.prototype.buildHTML = function () { //展示层，监视层
+            var html = '';
+            html +=
+                '<div class="rating-display"></div>' +
+                '<ul class="rating-mask">';
+            for (var i = 0; i < this.opts.total; i++) {
+                html += '<li class="rating-item"></li>';
+            }
+            html += '</ul>';
+
+            this.$el.html(html);
+        };
+
+
+		Rating.prototype.setCSS = function () { //item，底层，展示层，监视层宽度
+            this.$el.find('.rating-item').width(this.itemWidth);
+            this.$el.width(this.opts.total * this.itemWidth);
+            this.$display = this.$el.find('.rating-display');
+            this.$display.width(this.displayWidth);
+        };
+
+
+		Rating.prototype.bindEvent = function () {
+		    var _this = this;
+		    this.$el.on('mouseover', '.rating-item', function () {
+                var count = $(this).index() + 1;
+                _this.$display.width(count * _this.itemWidth);
+                (typeof _this.opts.select === 'function') && _this.opts.select.call(this, count, _this.opts.total);
+                _this.$el.trigger('select', [count, _this.opts.total]);
+            })
+
+                .on('click', '.rating-item', function () {
+                    var count = $(this).index() + 1;
+                    _this.displayWidth = count * _this.itemWidth;
+                    (typeof _this.opts.chosen === 'function') && _this.opts.chosen.call(this, count, _this.opts.total);
+                    _this.$el.trigger('chosen', [count, _this.opts.total]);
+                })
+
+                .on('mouseout', function () {
+                    _this.$display.width(_this.displayWidth);
+                });
+        };
+
+
+		Rating.prototype.unbindEvent = function () {
+            this.$el.off();
+        };
+
+
+		var init = function (el, option) {
+		    var $el = $(el),
+                rating = $el.data('rating');
+
+		    if (!rating) { //检测是否实例化了
+		        $el.data('rating', (rating = new Rating(el, typeof option === 'object' && option)));
+		        rating.init();
+            }
+
+            if (typeof option === 'string') rating[option]();
+		};
+
+
+		$.fn.extend({
+            rating: function (option) {
+                return this.each(function () {
+                    init(this, option);
+                });
+            }
+        });
+
+
+		/*return {init: init};*/
+	})();
+
+
+	/*rating.init('#rating',{
+	    total: 20,
+        num: 5,
+        readOnly: false,
+        select: function (count, total) {
+            console.log('select:' + this);
+            console.log(count + '/' + total);
+        },
+        chosen: function (count, total) {
+            rating.init('#rating', 'unbindEvent');
+        }
+    });*/
+	$('#rating').rating({
+        mode: 'quarter',
+        total: 30,
+        num: 5,
+        readOnly: false,
+        select: function (count, total) {
+            console.log('select:' + this);
+            console.log(count + '/' + total);
+        },
+        chosen: function (count, total) {
+           $('#rating').rating('unbindEvent');
+        }
+    });
+</script>
+</body>
+</html>

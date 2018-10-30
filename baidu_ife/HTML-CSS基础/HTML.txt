@@ -1,0 +1,283 @@
+
+HTML知识大纲
+
+一、标签
+
+链接
+	a 	link
+列表
+	nav ul/ol 	li
+	dl dt dd
+节
+	<h1><p>
+	div
+	span
+	header
+	section
+	article
+	aside
+	footer
+图像
+	img
+	canvas
+	figure
+	figcaption
+格式
+	abbr
+	address
+	b
+	i
+	em
+	strong
+	big
+	small
+	q
+	blockquote
+	cite
+	code
+	samp
+	kbd
+	var
+	pre
+	ins
+	del
+	dfn
+	progress
+	sub
+	sup
+	time
+表格
+	table
+	caption
+	th
+	tr
+	td
+	thead
+	tbody
+	tfoot
+表单
+	form
+	fieldset
+	legend
+	label
+	input
+	select
+	option
+	textarea
+	output
+	datalist
+	button
+框架
+	frameset
+	frame
+	iframe
+媒体
+	<audio>
+	video
+	source
+
+
+
+二、属性
+	id
+	class
+	title
+	style
+	data-*
+	lang
+	accesskey
+	target
+	name
+
+
+
+三、事件
+	window事件:
+	onerror				
+	onload
+	onunload
+	onresize
+
+	form事件:
+	onfocus
+	onblur
+	onchange
+	onsubmit
+
+	keyboard事件:
+	onkeydown		1
+	onkeypress		2		（alt ctrl等不触发）
+	onkeyup			3
+
+	mouse事件:
+	onclick
+	ondbclick
+	onmousemove/dowm/out/over/up
+	onmousewheel
+	onscroll
+
+
+
+四、表单
+	<form action="action_page.php" method="GET">
+	<fieldset>
+		<legend>Personal information:</legend>
+			First name:
+			<br>
+			<input type="text" name="firstname" value="Mickey">
+			<br>
+
+			<select name="cars">
+				<option value="volvo" selected>Volvo</option>
+				...
+			</select>
+
+			<input list="cars">
+			<datalist id="cars">
+				<option value="volvo">Volvo</option>
+				...
+			</datalist>
+
+			<input type="checkbox" name="vehicle" value="Bike">I have a bike
+
+			<input type="radio" name="sex" value="male" checked>Male
+
+			<textarea name="message" row="10" cols="30">text</textarea>
+			<input type="submit" value="Submit">
+	</fieldset>
+</form> 
+
+form属性：
+action
+autocomplete
+method
+name
+novalidate
+
+input输入限制：
+disabled
+readonly
+required
+max/min
+maxlength
+value
+
+input新增属性：
+autocomplete
+height/width
+placeholder
+
+input输入类型：
+text
+password
+Submit
+radio
+
+date
+email
+number
+time
+tel
+url
+
+
+五、HTML5
+	1.canvas
+	2.SVG
+	3.媒体
+		音频
+		<audio controls="controls" height="100" width="100">
+			<source src="song.mp3" type="audio/mp3" />
+			<source src="song.ogg" type="audio/mp3" />
+		<embed height="100" width="100" src="song.mp3" />
+		</audio>
+
+		雅虎媒体播放器
+		<a href="song.mp3">Play Sound</a>
+		<script src="http://mediaplayer.yahoo.com/js">
+
+
+		视频ogg/mpeg4/webM
+		<video width="320" height="240" controls="controls">
+			<source src="movie.mp4" type="video/mp4" />
+			<source src="movie.ogg" type="video/ogg" />
+			<source src="movie.webm" type="video/webm" />
+			<object data="movie.mp4" width="320" height="240">
+			    <embed src="movie.swf" width="320" height="240" />
+			</object>
+		</video>
+
+		audio/video属性
+		autoplay
+		controls
+		src
+		height/width
+
+
+		上传到优酷等
+		<embed src="http://player.youku.com/player.php/sid/XMzI2NTc4NTMy/v.swf" width="480" height="400" type="application/x-shockwave-flash"></embed>
+
+
+		地理定位
+		————————————————————
+
+
+		HTML5拖放
+		<img draggable="true" ondragstart="drag(event)">
+		<div ondrop="drop(event)" ondragover="allowDrop(event)">
+		drggable:可拖动
+		可拖动数据类型，为元素id
+		function drag(e){
+			e.dataTransfer.setData("text", e.target.id);
+		}
+
+		function onragover(e) {
+			e.preventDefault();
+		}
+		放置
+		function drop(e) {
+			e.preventDefault();阻止连接
+			var data=e.dataTransfer.getData('text');
+			e.target.appendChild(document.getElementById(data));
+		}
+
+	4.API
+			
+
+
+六、其他
+空格 	&nbsp;
+< 		&lt;
+>		&gt;
+"		&quot; 
+&		&amp;
+©		&copy;
+
+html颜色：http://www.w3school.com.cn/html/html_colors.asp
+
+
+<a href="xxx" target="_blank">
+<a href="(http://xxx)#tips">链接</a>
+<span name(id)="lable">锚</span>
+
+
+<table border="1"> <tr> <th>
+
+
+(无body)
+<frameset cols="25%,75%">
+	<frame src="frame_a.htm">
+	<frame src="frame_b.htm">
+</frameset>
+
+
+<iframe src="URL"></iframe>
+
+
+使用小写文件名
+
+canvas 		DOM不可用
+
+
+SVG			支持DOM事件，地图
+————————————————————

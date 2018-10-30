@@ -1,0 +1,25 @@
+body, textarea {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.container {
+  width: 1000px;
+  height: 600px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+#edit-textarea, #preview {
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  height: 100%;
+  padding: 20px;
+}
+#editor-textarea {
+  border-right: 1px solid #ccc;
+}
+
+

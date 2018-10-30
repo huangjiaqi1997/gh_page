@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.imageGallery{
+			text-align: center;
+		}
+		.imageGallery img{
+			width: 800px;
+		}
+		.btn{
+			display: inline-block;
+			height: 24px;
+			line-height: 24px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			background-color: #fff;
+			padding: 0 10px;
+			margin-right: 40px;
+			color: #333;
+		}
+		a{
+			text-decoration: none;
+		}
+		.btn:active{
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+<div class="imageGallery">
+	<img src="../images/imageGallery/1.jpg" alt="" id="img">
+	<p>
+		<a href="javascript:;" class="btn" data-control="prev">上一页</a>
+		<a href="javascript:;" class="btn" data-control="next">下一页</a>
+	</p>
+</div>
+<script src="../../../jquery-3.2.1.js"></script>
+<script src="图像预加载插件.js"></script>
+<script>
+	var imgSrcs = [
+		'../images/imageGallery/1.jpg',
+		'../images/imageGallery/2.jpg',
+		'../images/imageGallery/3.jpg',
+		'../images/imageGallery/4.jpg',
+		'../images/imageGallery/5.jpg'
+	];
+	var len = imgSrcs.length,
+		index = 0;
+
+
+	//有序预加载
+	$.preload(imgSrcs, {
+		order: 'order'
+	});
+
+
+	//切换图像
+	$('.btn').on('click', function () {
+		if ($(this).data('control')==='prev'){
+			index = Math.max(0, --index);
+		}else {
+			index = Math.min(len - 1, ++index);
+		}
+
+		document.title = (index + 1) + '/' + len;
+		$('#img').attr('src', imgSrcs[index]);
+	});
+</script>
+</body>
+</html>

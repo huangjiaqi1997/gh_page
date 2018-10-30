@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,ul,li{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style-type: none;
+        }
+        .rating{
+            width: 95px;
+            height: 19px;
+            margin: 100px auto;
+        }
+        .rating-item{
+            float: left;
+            width: 19px;
+            height: 19px;
+            cursor: pointer;
+            background: url("../img/star.png") no-repeat;
+        }
+    </style>
+</head>
+<body>
+     <ul class="rating" id="rating">
+         <li class="rating-item" title="很不好"></li>
+         <li class="rating-item" title="不好"></li>
+         <li class="rating-item" title="一般"></li>
+         <li class="rating-item" title="好"></li>
+         <li class="rating-item" title="很好"></li>
+     </ul>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

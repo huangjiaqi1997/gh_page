@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		body,ul,li{
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			list-style-type: none;
+		}
+		.rating{
+			width: 95px;
+			height: 19px;
+			margin: 100px auto;
+		}
+		.rating-item{
+			float: left;
+			width: 19px;
+			height: 19px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<div class="rating" id="rating">
+	<img src="img/star0.png" class="rating-item" title="很不好">
+	<img src="img/star0.png" class="rating-item" title="不好">
+	<img src="img/star0.png" class="rating-item" title="一般">
+	<img src="img/star0.png" class="rating-item" title="好">
+	<img src="img/star0.png" class="rating-item" title="很好">
+</div>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	var rating = (function () {
+
+		var extend = function (subClass, superClass) { //继承父类原型上的方法
+			var F = function () {};
+			F.prototype = superClass.prototype;
+			subClass.prototype = new F();
+			subClass.prototype.construtor = subClass;
+		}
+
+
+		var Light = function (el, options) { ///////////////////
+			this.$el = $(el);
+			this.$items = this.$el.find('.rating-item');
+			this.opts = options;
+			this.add = 1;
+			this.selectEvent = 'mouseover';
+		};
+		Light.prototype.init = function () { ////////////////
+			this.lightOn(this.opts.num);
+			if (!this.opts.readOnly) {
+				this.bindEvent()
+			}
+		};
+		Light.prototype.lightOn = function (reIndex) { ///////////////
+			var reIndex = parseInt(reIndex);
+			this.$items.each(function (index) {
+				if (index < reIndex) {
+					$(this).attr('src','img/star1.png');
+				} else {
+					$(this).attr('src','img/star0.png');
+				}
+			});
+		};
+
+
+		Light.prototype.bindEvent = function () { /////////////////
+			var _this = this,
+				itemLen = this.$items.length;
+
+			this.$el.on(_this.selectEvent, '.rating-item', function (e) {
+				_this.select(e, $(this));
+				var reIndex = $(this).index() + _this.add;
+				_this.lightOn(reIndex);
+				(typeof _this.opts.select === 'function') && _this.opts.select.call(this, reIndex, itemLen); //调用方法
+				_this.$el.trigger('select', [reIndex, itemLen]) //调用事件
+
+			}).on('click', '.rating-item', function () {
+				_this.opts.num = $(this).index() + _this.add;
+				(typeof _this.opts.choose === 'function') && _this.opts.choose.call(this, _this.opts.num, itemLen);
+				_this.$el.trigger('choose', [_this.opts.num, itemLen])
+
+			}).on('mouseout', function () {
+				_this.lightOn(_this.opts.num);
+			});
+		};
+
+		Light.prototype.select = function () {
+			throw new Error('子类必须重写此方法');
+		}
+		Light.prototype.unbindEvent = function () {
+			this.$el.off();
+		}
+
+
+
+
+		var LightEntire = function (el, options) { ///////////////////
+			Light.call(this, el, options); //继承父类构造函数中的内容
+			this.selectEvent = 'mouseover';
+		};
+		extend(LightEntire, Light);
+
+		LightEntire.prototype.init = function () { ////////////////
+			this.lightOn(this.opts.num);
+			if (!this.opts.readOnly) {
+				this.bindEvent()
+			}
+		};
+
+		LightEntire.prototype.lightOn = function (ReIndex) { ///////////////
+			Light.prototype.lightOn.call(this, ReIndex)
+		};
+
+
+		LightEntire.prototype.select = function() {
+			this.add = 1;
+		}
+
+
+
+
+
+		var LightHalf = function (el, options) { ///////////////////
+			Light.call(this, el, options);
+			this.selectEvent = 'mousemove';
+		};
+		extend(LightHalf, Light);
+		LightHalf.prototype.init = function () { ////////////////
+			this.lightOn(this.opts.num);
+			if (!this.opts.readOnly) {
+				this.bindEvent()
+			}
+		};
+
+		LightHalf.prototype.lightOn = function (reIndex) { ///////////////
+
+			var count = parseInt(reIndex),
+				isHalf = (reIndex !== count);
+			Light.prototype.lightOn.call(this, count)
+			if (isHalf) {
+				this.$items.eq(count).attr('src', 'img/star05.png');
+			}
+		};
+
+		LightHalf.prototype.select = function(e, $this) {
+			if (e.pageX - $this.offset().left < $this.width() / 2) {
+				this.add = 0.5;
+			} else {
+				this.add = 1;
+			}
+		}
+
+
+		var config = {
+			mode: 'LightEntire',
+			num: 0,
+			readOnly: false,
+			select: function () {},
+			choose: function () {}
+		};
+
+		//对两个模式数进行封装
+		var mode1 = {
+			'LightEntire': LightEntire,
+			'LightHalf': LightHalf
+		}
+
+
+		var init1 = function (el, option) {
+			var rating = $(el).data('rating'),
+				options = $.extend({}, config,typeof option === 'object' && option);
+			if (!mode1[options.mode]) {
+				options.mode = 'LightEntire';
+			}
+//			new LightEntire(el,options).init();
+//			new LightHalf(el,options).init();
+			if (!rating) {
+				$(el).data('rating', (rating = new mode1[options.mode](el,options)));
+				rating.init();
+			}
+			if (typeof option === 'string') rating[option]();
+		};
+
+
+		//JQuery
+		$.fn.extend({
+			rating: function (option) {
+				return this.each(function () {
+					init1(this, option);
+				});
+			}
+		})
+
+
+		return {
+			init1: init1
+		}
+	})();
+	$('#rating').rating({
+		mode: 'LightHalf',
+		num: 2.5
+	});
+	$('#rating').on('choose', function () {
+		$('#rating').rating('unbindEvent');
+	});
+
+
+	/*rating.init1('#rating', {
+	 mode: 'LightHalf',
+	 num: 2.5,
+	 //		select: function (num, total) {
+	 //			console.log(this); //!**
+	 //			console.log(num + '/' + total);
+	 //		}
+	 choose: function () { //点击之后不能再操作
+	 rating.init1('#rating','unbindEvent');
+	 }
+	 });
+
+	 $('#rating').on('select', function (e, num, total) {
+	 console.log(this); //!**
+	 console.log(num + '/' + total);
+	 }).on('choose', function (e, num, total) {
+	 console.log(this); //!**
+	 console.log(num + '/' + total);
+	 })*/
+
+
+
+	/*var rating = (function () {
+
+	 //遍历，index与num（点击 index+1、mouseover index+1）比较，点亮熄灭
+	 function lightOn($items, num) {
+	 $items.each(function (index) {
+	 if (index < num) {
+	 $(this).css('background-position','0 -28px');
+	 } else {
+	 $(this).css('background-position','0 0')
+	 }
+	 });
+	 }
+
+
+	 var init = function (el ,num) {
+	 var $rating = $(el),
+	 $items = $rating.find('li');
+
+
+	 //初始化(当设置了num初始值时)
+	 lightOn($items, num);
+
+
+	 //事件绑定（事件委托）
+	 $rating.on('mouseover', '.rating-item', function () {
+	 lightOn($items, $(this).index() + 1);
+	 }).on('click', '.rating-item', function () {
+	 num = $(this).index() + 1;
+	 }).on('mouseout', function () {
+	 lightOn($items, num);
+	 });
+	 };
+
+
+	 $.fn.extend({
+	 rating: function (num) {
+	 return this.each(function () {
+	 init(this, num);
+	 })
+	 }
+	 });
+
+
+	 return{
+	 init: init
+	 }
+	 })();
+
+
+	 /!*rating.init('#rating', 2);*!/
+	 $('.rating').rating(3)*/
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义checkbox、radio样式-context</title>
+  <link rel="stylesheet" href="./style-context.css">
+</head>
+<body>
+  <!-- 
+    使input隐藏，label添加for属性
+    在label下设置伪元素，表示未勾选
+    当勾选时，在label下设置表示勾选的伪元素。可覆盖，也可after再叠加
+   -->
+  <!-- 用伪类，伪元素添加空内容设置边框实现 -->
+  <div>
+      <input type="radio" name="sex" id="male"><label for="male">男</label> 
+      <input type="radio" name="sex" id="female"><label for="female">女</label>
+    </div>
+    
+    <div>
+      <input type="checkbox" id="sel-all">
+      <label for="sel-all">全选</label>
+    </div>
+</body>
+</html>

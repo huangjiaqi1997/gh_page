@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		#show{
+			width: 500px;
+			height: 350px;
+			background-color: yellow;
+			/*margin: 1000px auto 0 auto;*/
+			overflow-y: scroll;
+			margin: 1000px 0 0 0;
+		}
+		@keyframes fadeLeft {
+			0%{
+				opacity: 0;
+				transform: translate3d(100%,0,0);
+			}
+			100%{
+				opacity: 1;
+				transform: none;
+			}
+		}
+		.fadeInLeft{
+			animation-name: fadeLeft;
+			animation-duration: 2s;
+		}
+	</style>
+</head>
+<body>
+    <div id="show">
+	    <br/>1<br/><br/>2<br/><br/>3<br/><br/>4<br/><br/>5<br/><br/>6<br/><br/>7<br/><br/>8<br/><br/>9<br/><br/>10<br/><br/>11<br/><br/>12<br/><br/>13<br/><br/>14<br/><br/>15<br/>
+    </div>
+<script>
+	var div = document.getElementById('show');
+	var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+	//视窗高度、元素顶部距视窗顶部
+	function showDiv() {
+		var divTop = div.getBoundingClientRect().top;
+		if (divTop <= clients) {
+			div.classList.add('fadeInLeft');
+		}
+	}
+
+	//网页高度、视窗高度、卷起高度
+	function scrollBottomOrTop() {
+		var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+		var wholeHeight = document.documentElement.scrollHeight;
+		if (clients + scrollTop >= wholeHeight) {
+			alert('到底部了');
+		}
+		if (scrollTop === 0) {
+			alert('到顶部了');
+		}
+	}
+
+	//内容高度、卷起高度、div高度
+	function divScroll() {
+		var wholeHeight = div.scrollHeight; console.log(wholeHeight);
+		var scrollTop = div.scrollTop;console.log(scrollTop);
+		var divHeight = div.clientHeight;console.log(divHeight);
+		if (scrollTop + divHeight >= wholeHeight) {
+			alert('到底部了');
+		}
+		if (scrollTop === 0) {
+			alert('到顶部了');
+		}
+	}
+
+
+	//滚动条框度
+	function getScrollBar() {
+		var scrollBarWidth = div.offsetWidth - div.clientWidth;
+		alert(scrollBarWidth);
+
+		var clientWidth1 = div.clientWidth;
+		div.style.overflowY = 'hidden';
+		var clientWidth2 = div.clientWidth;
+		alert(clientWidth2 - clientWidth1);
+	}
+
+//	window.onscroll = showDiv;
+//	window.onscroll = scrollBottomOrTop;
+//	div.onscroll = divScroll;
+	window.onLoad = getScrollBar();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+div{
+  outline: 1px solid #ccc;
+}
+.container{
+  overflow: hidden;
+}
+.light, .gradation, .control{
+  float: left;
+  height: 300px;
+}
+.light{
+  width: 300px;
+}
+.gradation{
+  width: 20px;
+}
+.control{
+  width: 120px;
+}

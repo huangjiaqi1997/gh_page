@@ -1,0 +1,13 @@
+#container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  top: 50px;
+  left: 50px;
+}
+#drawing {
+  border: 1px solid #ccc;
+}
+img {
+  /* display: none; */
+}

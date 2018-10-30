@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*输入框*/
+		.datepicker{
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			padding: 5px;
+			height: 24px;
+			line-height: 24px;
+			width: 230px;
+		}
+		.datepicker:focus{
+			outline: 0 none;
+			border: 1px solid green;
+		}
+
+		/*日历*/
+		.ui-datepicker-wrapper{
+			width: 240px;
+			font-size: 16px;
+			color: #666;
+			box-shadow: 2px 2px 8px 2px rgba(128, 128, 128, .3);
+			position: absolute;
+			display: none;
+		}
+		.ui-datepicker-wrapper-show{
+			display: block;
+		}
+		.ui-datepicker-wrapper .ui-datepicker-header{
+			padding: 0 20px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background-color: #f0f0f0;
+			border-bottom: 1px solid #ccc;
+			font-weight: bold;
+		}
+		.ui-datepicker-wrapper .ui-datepicker-btn{
+			font-family: serif;
+			font-size: 20px;
+			line-height: 50px;
+			cursor: pointer;
+			text-decoration: none;
+			color: green;
+		}
+		.ui-datepicker-wrapper .ui-datepicker-prev-btn{
+			float: left;
+		}
+		.ui-datepicker-wrapper .ui-datepicker-next-btn{
+			float: right;
+		}
+		.ui-datepicker-wrapper .ui-datepicker-body table{
+			width: 100%;
+			border-collapse: collapse;
+		}
+		.ui-datepicker-wrapper .ui-datepicker-body th,
+		.ui-datepicker-wrapper .ui-datepicker-body td{
+			text-align: center;
+			border: 1px solid #f0f0f0;
+			width: 14%;
+			cursor: pointer;
+		}
+		.ui-datepicker-wrapper .ui-datepicker-body th{
+			height: 40px;
+			line-height:40px;
+			font-size: 12px;
+		}
+		.ui-datepicker-wrapper .ui-datepicker-body td{
+			height: 30px;
+			line-height:30px;
+			font-size: 10px;
+		}
+	</style>
+</head>
+<body>
+
+    <input type="text" class="datepicker">
+
+
+<script src="获取所有日月数据.js"></script>
+<script src="初始化主体链、构建日历.js"></script>
+<script>
+
+	datepicker.init(document.querySelector('.datepicker'));
+
+</script>
+</body>
+</html>

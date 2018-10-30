@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font: 12px/1.5 'Microsoft YaHei',Tahoma,Arial;
+}
+#lb-mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    /*background: url("img/icon/transparent.png")*/
+    z-index: 10000;
+    display: none;
+}
+#lb-container{
+    position: fixed;
+    background-color: #fff;
+    z-index: 10001;
+    display: none;
+}
+#lb-container .lb-show-div{
+    position: relative;
+    border: 5px solid #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#lb-container .lb-show-div .lb-btn{
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 1;
+    /*background-color: transparent;*/
+    background-image: url("../img/icon/transparent.png"); /*IE*/
+}
+#lb-container .lb-show-div .lb-prev-btn{
+    left: 0;
+}
+#lb-container .lb-show-div .lb-next-btn{
+    right: 0;
+}
+#lb-container .lb-show-div .lb-prev-btn-show:hover{
+    background: url(../img/icon/prev.png) no-repeat left center;
+}
+#lb-container .lb-show-div .lb-next-btn-show:hover{
+    background: url(../img/icon/next.png) no-repeat right center;
+}
+#lb-container .lb-show-div .lb-show-pic{
+    display: block;
+}
+#lb-container .lb-side{
+    position: relative;
+    width: 100%;
+    margin: 0 5px;
+    margin-top: -60px;
+    background: rgba(0,0,0,0.5);
+    /*background-image: url("img/icon/transparent.png");*/
+    z-index: 2;
+}
+#lb-container .lb-side .lb-side-div{
+    padding: 10px 5px;
+    color: #fff;
+}
+#lb-container .lb-side .lb-side-div .lb-side-div-index{
+    color: #999;
+}
+#lb-container .lb-side .lb-side-close{
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    width: 27px;
+    height: 27px;
+    background: url("../img/icon/close.png") no-repeat center center;
+    cursor: pointer;
+}
+.small-group li{
+    float: left;
+    list-style-type: none;
+    margin: 1px;
+}
+.small-group li img{ /*模拟小图*/
+    display: block; /*消除li下边距*/
+    width: 100px;
+    height: 100px;
+}
+.small-group{
+    overflow: hidden;
+}

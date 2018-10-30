@@ -1,0 +1,29 @@
+body, html, table, thead, tbody, tr, th, td, div, select, option{
+	margin: 0;
+	padding: 0;
+}
+table{
+	margin: 100px auto;
+	font-size: 20px;
+	border-collapse: collapse;
+}
+th, td{
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+th{
+	background-color: #666;
+	color: #fff;
+	border-color: #fff;
+}
+select{
+	color: #fff;
+	background-color: #666;
+}
+select.used{
+	color: #000;
+	background-color: #fff;
+}

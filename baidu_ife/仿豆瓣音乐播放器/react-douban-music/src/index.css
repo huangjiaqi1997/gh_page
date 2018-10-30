@@ -1,0 +1,31 @@
+body, a, input, label, form, h2, label {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font: 12px Arial,Helvetica,sans-serif;
+  background-color: #272C30;
+  color: #CACACA;
+  color: rgba(255,255,255,0.5);
+}
+a, i {
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover, i:hover {
+  color: #CACACA;
+}
+.music-app {
+  width: 100%;
+}
+.list-side-wrapper {
+  width: 894px;
+  overflow: hidden;
+  margin: 30px auto 0;
+}
+
+/* 
+div, a, input, label {
+  outline: 1px solid #ccc
+} */

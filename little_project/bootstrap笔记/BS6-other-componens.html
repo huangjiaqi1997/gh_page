@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>other components</title>   
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--你自己的样式文件 -->
+    <link href="css/myStyle.css" rel="stylesheet">        
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        html{
+            background: #ccc;
+        }
+        body{
+            width: 60%;
+            margin: 10px auto;
+            padding: 10px;
+            padding-top: 60px;
+        }
+        .row{
+            width: 100%;
+        }
+        </style>
+</head>
+<body>
+    <h2>缩略图</h2>
+    <br>
+<pre>
+    div.row
+        div.col-xs-6 col-md-3
+            a.thumbnail
+                img
+        div
+        ...
+</pre>
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 100%; width: 100%; display: block;" >
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 100%; width: 100%; display: block;">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 100%; width: 100%; display: block;">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 100%; width: 100%; display: block;">
+            </a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h4>添加标题、描述、按钮</h4>
+<pre>
+    div.row
+        div.col-xs-6 col-md-3
+            a.thumbnail
+                img
+            *div.caption
+                h3
+                p
+                p
+                    a.btn
+</pre>
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 100%; width: 100%; display: block;" >
+            </a>
+            <div class="caption">
+                <h4>Bootstrap框架系列教程</h4>
+                <p>Bootstrap框架是一个优秀的前端框，就算您是一位后端程序员或者你是一位不懂设计的前端人员，你也能依赖于Bootstrap制作做优美的网站...</p>
+                <p>
+                    <a href="##" class="btn btn-primary">开始学习</a>
+                    <a href="##" class="btn btn-info">正在学习</a>
+                </p>
+            </div>  
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>警示框</h2>
+    <br>
+<pre>
+    div.alert alert-danger (info success danger)  role="alert"
+</pre>
+    <div class="alert alert-danger" role="alert">对不起，您输入的密码有误</div> 
+    <br>
+    <br>
+    <h4>可关闭的警示框</h4>
+<pre>
+    div.alert alert-danger *alert-dismissable  role="alert"
+        *button.close  type="button"  data-dismiss="alert"
+            &times;
+        输入有误
+</pre>
+    <div class="alert alert-success  alert-dismissable" role="alert">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        恭喜您操作成功！
+    </div>
+    <br>
+    <br>
+    <h4>警示框的链接</h4>
+<pre>
+    div.alert alert-success  role="alert"
+        *a.alert-link
+        ...
+</pre>
+    <div class="alert alert-success" role="alert">
+        <strong>Well done!</strong> 
+        You successfully read 
+        <a href="#" class="alert-link">this important alert message</a>
+        .
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>进度条</h2>
+<pre>
+    div.progress
+        div.progress-bar  style="width:30%"
+</pre>
+    <div class="progress">
+         <div class="progress-bar" style="width:30%"></div>
+    </div>
+    <br>
+    <br>
+    <h4>颜色</h4>
+<pre>
+    div.progress
+        div.progress-bar *progress-bar-danger
+</pre>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger" style="width:90%"></div>
+    </div>
+    <br>
+    <br>
+    <h4>条纹进度条</h4>
+<pre>
+    div.progress (*progress-striped (active))
+        div.progress-bar *progress-bar-striped (active)
+</pre>
+    <div class="progress">
+        <div class="progress-bar" style="width:30%"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped active" style="width:30%"></div>
+    </div>
+    <br>
+    <br>
+    <h4>层叠进度条</h4>
+<pre>
+    div.progress
+        div.progress-bar
+        div.progress-bar
+        ...
+</pre>
+    <div class="progress">
+        <div class="progress-bar" style="width:10%"></div>
+        <div class="progress-bar progress-bar-warning" style="width:30%"></div>
+        <div class="progress-bar progress-bar-danger" style="width:15%"></div>
+    </div> 
+    <br>
+    <br>
+    <h4>带Label的进度条</h4>
+<pre>
+    div.progress
+        div.progress-bar  role="progressbar"  aria-valuenow="15"  aria-valuemin="0"  aria-valuemax="100"
+            15%
+</pre>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width:15%">15%</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>媒体对象</h2>
+<pre>
+    div.*media
+        a.pull-left
+            img.*media-object (常常是图片)
+        div.*media-body
+            h4.*media-heading
+            div
+</pre>
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="http://img.mukewang.com/52e1d29d000161fe06000338-300-170.jpg" alt="...">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">系列：十天精通CSS3</h4>
+            <div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h4>嵌套</h4>
+<pre>
+    ...
+        div.media-body
+            h4.media-heading
+            div
+            *div.media
+            ...
+</pre>
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="http://img.mukewang.com/52e1d29d000161fe06000338-300-170.jpg" alt="...">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">系列：十天精通CSS3</h4>
+            <div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="http://tp2.sinaimg.cn/3306361973/50/22875318196/0" alt="...">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">慕课网</h4>
+                    <div>大漠写的《玩转Bootstrap》系列教程即将会在慕课网上发布</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h4>媒体对象列表</h4>
+<pre>
+    ul.media-list
+        li.media
+        ...
+        li.media
+        ...
+
+</pre>
+    <ul class="media-list">
+        <li class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://a.disquscdn.com/uploads/users/3740/2069/avatar92.jpg?1406972031" alt="...">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">我是大漠</h4>
+                <div>我是W3cplus站长大漠，我在写Bootstrap框中的媒体对象测试用例</div>
+            </div>
+        </li>
+        <li class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://tp2.sinaimg.cn/3306361973/50/22875318196/0" alt="...">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">慕课网</h4>
+                <div>大漠写的《玩转Bootstrap》系列教程即将会在慕课网上发布</div>
+            </div>
+        </li>
+        <li class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://tp4.sinaimg.cn/1167075935/50/22838101204/1" alt="...">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">W3cplus</h4>
+                <div>W3cplus站上还有很多教程....</div>
+            </div>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>列表组</h2>
+    <br>
+<pre>
+    ul.list-group
+        li.list-group-item
+        ...
+</pre>
+    <ul class="list-group">
+        <li class="list-group-item">JavaScript</li>
+        <li class="list-group-item">CSS3</li>
+        <li class="list-group-item">HTML</li>
+    </ul>
+    <br>
+    <br>
+    <h4>添加颜色 活动/禁用 徽章 链接</h4>
+<pre>
+    ul.list-group
+        li.list-group-item *list-group-item-danger *acitive/disabled
+            *span.badge
+            *a
+        li...
+        ...
+</pre>
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <span class="badge">13</span>JavaScript
+        </li>
+        <li class="list-group-item list-group-item-success">CSS3</li>
+        <li class="list-group-item">
+            <a href="##">HTML</a>
+        </li>
+        <li class="list-group-item disabled">jQuery</li>
+
+    </ul>
+    <br>
+    <br>
+    <h4>自定义列表组</h4>
+<pre>
+    div.list-group
+        a.list-group-item
+            h4.list-group-item-heading
+            p.list-group-item-text
+        a...
+        ...
+</pre>
+    <div class="list-group">
+        <a href="##" class="list-group-item">
+            <h4 class="list-group-item-heading">图解CSS3</h4>
+            <p class="list-group-item-text">详细讲解了响应Web设计、Web字体等主题下涵盖的所有CSS3新特性。</p>
+        </a>
+        <a href="##" class="list-group-item">
+            <h4 class="list-group-item-heading">Sass中国</h4>
+            <p class="list-group-item-text">致力于为中国开发者提供最全面，最具影响力，最前沿的Sass相关技术与教程。</p>
+        </a>
+        <a href="##" class="list-group-item active">图解CSS3</a>
+        <a href="##" class="list-group-item"><span class="badge">2</span>W3cplus</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>面板</h2>
+<pre>
+    div.panel panel-default
+        div.panel-heading
+        div.panel-body
+        div.panel-footer
+</pre>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+        </div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <br>
+    <br>
+    <h3>颜色</h3>
+<pre>
+    di.panel panel-default (primary success info warning danger)
+        ...
+</pre>
+    <div class="panel panel-primary">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <div class="panel panel-danger">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <br>
+    <br>
+    <h4>嵌套表格 列表组</h4>
+<pre>
+    div.panel panel-default
+        div.panel-body
+            p
+            *table.table
+            ...
+            *ul.list-group
+            ...
+
+        (*table.table
+        ...
+        *ul.list-group
+        ...)
+</pre>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">
+            <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>＃</th>
+                        <th>我的书</th>
+                        <th>发布时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>《图解CSS3》</td>
+                        <td>2014-07-10</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul class="list-group">
+            <li class="list-group-item">苹果</li>
+            <li class="list-group-item">橘子</li>
+            <li class="list-group-item">菠萝</li>
+        </ul>
+        </div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">
+            <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+            </p>
+        </div>
+        <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>＃</th>
+                        <th>我的书</th>
+                        <th>发布时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>《图解CSS3》</td>
+                        <td>2014-07-10</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul class="list-group">
+            <li class="list-group-item">苹果</li>
+            <li class="list-group-item">橘子</li>
+            <li class="list-group-item">菠萝</li>
+        </ul>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

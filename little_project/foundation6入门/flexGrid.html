@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex grid</title>
+	<link rel="stylesheet" type="text/css" href="foundation-6.3.1-complete/css/foundation.min.css">
+</head>
+<body>
+	<!-- 如何开启Flex Grid？
+	Flex Grid:
+	不指定宽度的列自动扩展填充一行中的剩余位置
+	.shrink可根据内容缩减列宽
+	屏幕尺寸变小时不会自动堆叠列 -->
+	<div class="row">
+		<div class="column shrink small-12" style="background-color: #881f0e">FLEX</div>
+		<div class="column small-12" style="background-color: #0a0a0a">FLEX</div>
+		<div class="column small-12" style="background-color: #0c4d78">FLEX</div>
+	</div>
+
+	<!-- 水平默认所有列左对齐，居右、居中、两边对齐、等距对齐 -->
+	<div class="row">
+		<div class="column small-3" style="background-color: #3abd76">ALIGN</div>
+		<div class="column small-3" style="background-color: #0c4d78">ALIGN</div>
+	</div>
+	<div class="row align-right">
+		<div class="column small-3" style="background-color: #3abd76">ALIGN</div>
+		<div class="column small-3" style="background-color: #0c4d78">ALIGN</div>
+	</div>
+	<div class="row align-center">
+		<div class="column small-3" style="background-color: #3abd76">ALIGN</div>
+		<div class="column small-3" style="background-color: #0c4d78">ALIGN</div>
+	</div>
+	<div class="row align-justify">
+		<div class="column small-3" style="background-color: #3abd76">ALIGN</div>
+		<div class="column small-3" style="background-color: #0c4d78">ALIGN</div>
+	</div>
+	<div class="row align-spaced">
+		<div class="column small-3" style="background-color: #3abd76">ALIGN</div>
+		<div class="column small-3" style="background-color: #0c4d78">ALIGN</div>
+	</div>
+
+	<!-- 垂直默认等高对齐，顶对齐、居中对齐、顶对齐 -->
+	<div class="row">
+		<div class="column" style="background-color: #3abd76">This is a demo of vertical alignment for foundation.</div>
+		<div class="column align-self-top" style="background-color: #3abd76">TOP</div>
+		<div class="column align-self-middle" style="background-color: #3abd76">MIDDLE</div>
+		<div class="column align-self-bottom" style="background-color: #3abd76">BOTTOM</div>
+	</div>
+
+	<!-- 控制列的显示顺序 -->
+	<div class="row align-spaced">
+		<div class="column small-order-1 large-order-2" style="background-color: #3abd76">A</div>
+		<div class="column small-order-2 large-order-1" style="background-color: #0c4d78">B</div>
+	</div>
+</body>
+</html>

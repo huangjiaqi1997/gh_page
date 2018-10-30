@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>text && table</title>   
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--你自己的样式文件 -->
+    <link href="css/myStyle.css" rel="stylesheet">        
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        html{
+            background: #ccc;
+        }
+        body{
+            width: 60%;
+            margin: 0 auto;
+            padding: 10px
+        }
+        </style>
+</head>
+<body>
+    <br>
+    <h2>文本</h2>
+    <br>
+    <h4>标题</h4>
+<pre>
+    div.h5
+</pre>
+    <div class="h5">div标题5</div>
+    <br>
+<pre>
+    h3
+        small
+        副标题
+</pre>
+    <h3><small>我是副标题</small></h3>
+    <br>
+    <br>
+    <h4>强调</h4>
+<pre>
+    p.lead  (强调)
+</pre>
+    <p class="lead">
+        缩略图在网站中最常用的地方就是产品列表页面，一行显示几张图片，有的在图片底下（左侧或右侧）带有标题、描述等信息。
+    </p>
+    <br>
+<pre>
+    p.small
+</pre>
+    <p class="small">缩略图在网站中最常用的地方就是产品列表页面，一行显示几张图片，有的在图片底下（左侧或右侧）带有标题、描述等信息。
+    </p>
+    <br>
+    <br>
+<pre>
+    b  srong
+    em  i
+</pre>
+    <b>粗体</b> <strong>粗体</strong>
+    <br>
+    <em>斜体</em> <i>斜体</i>
+    <br>
+    <br>
+    <br>
+    <h4>颜色</h4>
+    <div class="text-muted">.text-muted 效果</div>
+    <div class="text-primary">.text-primary效果</div>
+    <div class="text-success">.text-success效果</div>
+    <div class="text-info">.text-info效果</div>
+    <div class="text-warning">.text-warning效果</div>
+    <div class="text-danger">.text-danger效果</div>
+    <br>
+    <br>
+    <h4>排版</h4>
+    <p class="text-left">.text-left</p>
+    <p class="text-center">.text-center</p>
+    <p class="text-right">.text-right</p>
+    <p class="text-justify">.text-justify    .text-justify    .text-justify    .text-justify    .text-justify    .text-justify    .text-justify    .text-justify</p>
+    <br>
+    <br>
+     <h4>代码</h4>
+<pre>
+    code
+
+    pre.pre-scrollable
+
+    kbd
+</pre>
+    <code>&lt;code&gt;</code>
+<pre class="pre-scrollable">
+    &lt;ul&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+    &lt;/ul&gt;
+</pre>
+    <p>请输入<kbd>ctrl+c</kbd>来复制代码</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>列表</h2>
+    <br>
+    <h4>无点</h4>
+<pre>
+    ul.list-unstyled
+</pre>
+    <ul class="list-unstyled">
+        <li>苹果</li>
+        <li>橘子</li>
+    </ul>
+    <br>
+    <br>
+    <h4>内联</h4>
+<pre>
+    ul.list-inline
+</pre>
+    <br>
+    <ul class="list-inline">
+        <li>W3cplus</li>
+        <li>Blog</li>
+        <li>CSS3</li>
+    </ul>
+    <br>
+    <br>
+    <h4>水平定义列表</h4>
+<pre>
+    dl.dl-horizontal
+        dt
+        dd
+</pre>
+    <dl class="dl-horizontal">
+        <dt>W3cplus</dt>
+        <dd>一个国内前端技术博客。</dd>
+        <dt>慕课网</dt>
+        <dd>一个专业做培训的网站</dd>
+    </dl>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>表格</h2>
+    <h4>基础表格</h4>
+<pre>
+    table.table
+</pre>
+    <table class="table">
+        <thead>
+            <tr>
+               <th>表格标题</th>
+               <th>表格标题</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+               <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h4>斑马线表格</h4>
+<pre>
+    table.table table-striped
+</pre>
+<table class="table table-striped">
+   <thead>
+     <tr>
+       <th>表格标题</th>
+       <th>表格标题</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+   </tbody>
+ </table>
+ <br>
+    <h4>带边框的表格</h4>
+<pre>
+    table.table table-bordered
+</pre>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>表格标题</th>
+                <th>表格标题</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+        </tbody>
+    </table>
+<br>
+    <h4>鼠标悬浮高亮的表格</h4>
+<pre>
+     table.table. table table-hover
+</pre>
+<table class="table table-hover">
+   <thead>
+     <tr>
+       <th>表格标题</th>
+       <th>表格标题</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+   </tbody>
+ </table>
+ <br>
+    <h4>紧凑型表格</h4>
+<pre>
+    table.table table-condensed
+</pre>
+  <table class="table table-condensed">
+   <thead>
+     <tr>
+       <th>表格标题</th>
+       <th>表格标题</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+   </tbody>
+ </table>
+ <br>
+    <h4>响应式表格</h4>
+ <pre>
+    div.table-responsive
+        table
+</pre>
+ <div class="table-responsive">
+   <table class="table">
+   <thead>
+     <tr>
+       <th>表格标题</th>
+       <th>表格标题</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+   </tbody>
+ </table>
+ </div>
+    <br>
+    <br>
+    <h4>行的样式</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>类名</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="active">
+                <td>tr.active</td>
+                <td>当前活动</td>
+            </tr>
+            <tr class="success">
+                <td>tr.success</td>
+                <td>成功或者正确</td>
+            </tr>
+            <tr class="info">
+                <td>tr.info</td>
+                <td>中立的信息</td>
+            </tr>
+            <tr class="warning">
+                <td>tr.warning</td>
+                <td>警告注意</td>
+            </tr>       
+            <tr class="danger">
+                <td>tr.danger</td>
+                <td>危险或者错误</td>
+            </tr>
+        </tbody>
+    </table> 
+<!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

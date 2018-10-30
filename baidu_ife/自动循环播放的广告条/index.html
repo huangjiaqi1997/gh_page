@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 清除浮动的方式 -->
+  <style>
+    /* 
+     方法一：添加新的元素 、应用 clear：both；
+     方法二：父级div定义 overflow: auto
+     方法三： 
+     .outer { zoom: 1 } IE6, IE7
+     .outer::after { clear:both; content: '.'; display: block; width: 0; height: 0; visibility: hidden;
+    */
+    img, body, ul, li {
+      padding: 0;
+      margin: 0;
+    }
+    .view {
+      width: 480px;
+      height: 270px;
+      overflow: hidden;
+      position: relative;
+    }
+    img {
+      position: absolute;
+    }
+    @keyframes slip1 {
+      0% {left: 0;}
+      100% {left: -480px}
+    }
+    @keyframes slip2 {
+      0% {left: 480;}
+      100% {left: 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="view">
+      <img src="1.jpg" alt="">
+      <img src="2.jpg" alt="">
+      <img src="3.jpg" alt="">
+
+  </div>
+
+<script>
+  var url = [
+    '1.jpg', '2.jpg', '3.jpg'
+  ]
+  for (var i = 0; i < url.length; i++) {
+    var obj = new Image();
+    obj.onload = function() {}
+    obj.src = url[i];
+  }
+
+
+
+  var view = document.querySelector('.view');
+  var imgs = document.querySelectorAll('img');
+
+  var imgLen = imgs.length;
+  var i = 0;
+
+  setInterval(function() {
+    i++;
+    if (i===imgLen) {
+      i = 0;
+    }
+
+    var wprOL = wrapper.offsetLeft;
+    var left = -(i * 480)
+    wrapper.style.left = left + 'px';
+  }, 2000);
+</script>
+</body>
+</html>

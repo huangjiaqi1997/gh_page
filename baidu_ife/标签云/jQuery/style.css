@@ -1,0 +1,17 @@
+body, html, div, span{
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+}
+body{
+	font-weight: 700;
+	font-family: Verdana, Fira Code;
+}
+#container{
+	position: absolute;
+}
+span{
+	display: inline-block;
+	position: absolute;
+	cursor: pointer;
+}
