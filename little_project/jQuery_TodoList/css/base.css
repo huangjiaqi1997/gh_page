@@ -1,0 +1,126 @@
+*{
+	box-sizing: border-box;
+}
+body, .container{
+	background-color: rgb(105, 107, 111);
+}
+.container{
+	max-width: 800px;
+	margin: 0 auto;
+	font: 20px "微软雅黑";
+	position: relative;
+}
+h1{
+	color: #fff;
+	text-align: center;
+}
+
+
+input[type="text"], input[type="date"], textarea{
+	background-color: #dcdcdc;
+	outline: none;
+}
+input[type="text"]:focus,
+input[type="text"]:hover,
+input[type="date"]:focus,
+input[type="date"]:hover,
+textarea:focus,
+textarea:hover{
+	background-color: #eee;
+	box-shadow: inset 0 0 2px 0 #333;
+}
+input[type="text"],
+input[type="date"],
+button,
+.task-item,
+textarea{
+	border-radius: 3px;
+	transition: background-color .1s ease;
+	border: none;
+	padding: 10px;
+}
+input[type="text"],
+input[type="date"],
+textarea{
+	box-shadow: inset 0 0 2px 0 #666;
+}
+input[type="text"],
+.add-task button,
+.task-item{
+	box-shadow: 0 0 2px 0 #666;
+}
+button{
+	color: #fff;
+	background-color: #3a3939;
+}
+button, .task-item, .content{
+	cursor: pointer;
+}
+button:hover{
+	background-color: #575454;
+}
+
+
+
+.add-task input[type="text"]{
+	display: block;
+	float: left;
+	width: 84%;
+	margin-right: 1%;
+	outline: none;
+}
+.add-task button{
+	width: 15%;
+}
+
+
+.task-list{
+	margin: 20px 0;
+}
+.task-item{
+	background-color: #fff;
+	color: #444;
+	margin-bottom: 5px;
+
+}
+.task-item:hover{
+	background-color: #ccc;
+}
+
+
+.task-detail-mask{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.task-detail{
+	position: absolute;
+	padding: 10px;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background-color: #fff;
+	color: #444;
+}
+.task-detail-mask,
+.task-detail{
+	border-radius: 3px;
+}
+.task-detail>*{
+	margin-bottom: 10px;
+}
+.task-detail .content{
+	font-weight: 900;
+	padding: 10px;
+}
+.task-detail textarea{
+	height: 100px;
+	width: 100%;
+}
+.task-detail button{
+	width: 100%;
+}

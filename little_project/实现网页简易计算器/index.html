@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lesson 3_7</title>
+  <style>
+    body{
+      padding: 0;
+      color: #000;
+      background: #fff;
+      text-align: right;
+      font: 25px Arial;
+    }
+    div{
+      width:304px;
+      padding: 2px;
+      margin: 0 auto;
+    }
+    #head{
+      height:12px;
+      padding: 2px;
+      font-size: 10px;
+      background: #000;
+      color: #fff;
+    }
+    #smallInput{
+      height: 14px;
+      padding: 3px 2px;
+      background: #BBB;
+      font-size: 10px;
+    }
+    #input{
+      height: 50px;
+      line-height: 40px;
+      font-size: 40px;
+      font-weight: 900;
+      padding: 0 2px 10px 2px;
+      background: #BBB;
+    }
+    #buttons{
+      padding: 5px 2px;
+      overflow: hidden;
+      color: #fff;
+      background: #404040;
+      height: 260px;
+      list-style-type: none;
+    }
+    button{
+      color: #fff;
+      text-align: center;
+      float: left;
+      width: 70px;
+      height: 40px;
+      /*button内自动居中!*/
+      margin: 6px 3px;
+      font-size: 25px;
+      font-weight: 900;
+      border-radius: 2px;
+    }
+    .zero{
+      width: 146px;
+    }
+    .fh{
+      background: #9999aa;
+    }
+    .num,.point{
+      background: #000;
+    }
+    .dh{
+      background: orange;
+      height: 90px;
+      line-height: 90px;
+      /*向右浮动*/
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div id="head">网页计算器</div>
+  <div id="smallInput"></div>
+  <div id="input">0</div>
+  <div id="buttons">
+    <button class="fh" value="c">c</button>
+    <button class="fh" value="%">%</button>
+    <button class="fh" value="/">÷</button>
+    <button class="fh" value="*">×</button>
+    <button class="num" value="7">7</button>
+    <button class="num" value="8">8</button>
+    <button class="num" value="9">9</button>
+    <button class="fh" value="-">-</button>
+    <button class="num" value="4">4</button>
+    <button class="num" value="5">5</button>
+    <button class="num" value="6">6</button>
+    <button class="fh" value="+">+</button>
+    <button class="num" value="1">1</button>
+    <button class="num" value="2">2</button>
+    <button class="num" value="3">3</button>
+    <!--等号在3后！-->
+    <button class="dh" value="=">=</button>
+    <button class="num zero" value="0">0</button>
+    <button class="point" value=".">.</button>
+  </div>
+<script>
+  (function () {
+    var input=document.getElementById('input');
+    var smallInput=document.getElementById('smallInput');
+    var nums=document.getElementsByClassName('num');
+    var point=document.getElementsByClassName('point')[0];
+    var fhs=document.getElementsByClassName('fh');
+    var dh=document.getElementsByClassName('dh')[0];
+    var allBtns=document.getElementsByTagName('button');
+
+
+
+
+
+    var inputnum=[];
+    for(var i=0;i<allBtns.length;i++){
+        allBtns[i].addEventListener('click',function (event) {
+
+          //写成allBtns[i].value不管用！！
+          switch(this.value) {
+
+            case 'c':
+              inputnum=[];
+              input.innerHTML='0';
+              smallInput.innerHTML='';
+              break;
+
+            //全等！字符串要加引号！！
+            case '1':case '2':case '3':
+            case '4':case '5':case '6':
+            case '7':case '8':case '9':
+              if(input.firstChild.nodeValue.length<11) {
+                inputnum.push(this.value);
+                input.innerHTML=/\d+$/.exec(inputnum.join(''))[0];
+              }
+              break;
+
+            case '0':
+              if(input.firstChild.nodeValue!=='0'){
+                inputnum.push(this.value);
+                input.innerHTML = /\d+(\.||\d+)$/.exec(inputnum.join(''))[0];
+              }
+              break;
+
+            case '.':
+              if(input.firstChild.nodeValue==='0'){
+                inputnum.push('0');
+                inputnum.push(this.value);
+                input.innerHTML =/\d+(\.||\d+)$/.exec(inputnum.join(''))[0];
+              }
+              if(!(/\./.test(input.firstChild.nodeValue))){
+                inputnum.push(this.value);
+                input.innerHTML =/\d+(\.||\d+)$/.exec(inputnum.join(''))[0];
+              }
+              break;
+
+            case '%':case '/': case '*':case '-':case '+':
+              inputnum.push(this.value);
+              input.innerHTML=this.value;
+              smallInput.innerHTML=inputnum.join('');
+              break;
+
+            case '=':
+              input.innerHTML=eval(inputnum.join(''));
+              smallInput.innerHTML=inputnum.join('');
+
+              inputnum=[eval(inputnum.join(''))];
+
+          }
+        },false);
+    }
+
+
+  })();
+</script>
+</body>
+</html>

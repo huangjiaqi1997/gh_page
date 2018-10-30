@@ -1,0 +1,36 @@
+npm install -g yo
+
+npm install -g generator-react-webpack
+
+(npm ls -g --depth=1 2>/dev/null | grep generator-)
+
+github found a repository
+
+cd C:\Users\asus\Desktop\webproject\imooc
+
+git clone https://github.com/benliuss/gallery-by-react.git
+
+cd gallery-by-react
+
+yo react-webpack gallery-by-react
+
+npm start
+
+npm run dist 打包
+
+npm run serve:dist 验证打包
+
+
+css自动添加前缀
+npm install autoprefixer-loader -save-dev  (+package.json-"devDependencives")
+
+npm install json-loader --save-dev
+
+
+提交
+git status
+git add -A
+git commit -m "init/finish projectName"
+git push
+
+

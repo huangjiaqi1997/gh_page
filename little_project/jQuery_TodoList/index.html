@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jquery-todo-list</title>
+<link rel="stylesheet" type="text/css" href="node_modules/_normalize.css@7.0.0@normalize.css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<body>
+ 	<div class="container"> <!-- 总容器开始 -->
+ 		<h1>我的Todo</h1>
+ 		<div class="add-task"> <!-- 添加任务开始 -->
+ 			<input type="text"><button type="submit">submit</button>
+ 		</div> <!-- 添加任务结束 -->
+ 		<div class="task-list"> <!-- 任务列表开始 -->
+ 			<div class="task-item"> <!-- 任务开始 -->
+ 				<span><input type="checkbox" placeholder="e.g. 下午记得买菜"></span>
+ 				<span class="task-content">task content1</span>
+ 				<span>delete</span>
+ 				<span>detail</span>
+ 			</div> <!-- 任务结束 -->
+ 			<div class="task-item">
+ 				<span><input type="checkbox"></span>
+ 				<span class="task-content">task content1</span>
+ 				<span>delete</span>
+ 				<span>detail</span>
+ 			</div>
+ 			<div class="task-item">
+ 				<span><input type="checkbox"></span>
+ 				<span class="task-content">task content1</span>
+ 				<span>delete</span>
+ 				<span>detail</span>
+ 			</div>
+ 		</div> <!-- 任务列表结束 -->
+ 		<!-- <div class="task-detail-mask"></div>
+ 		<div class="task-detail"> 任务细节开始
+ 			<div class="content">
+ 				下午记得买菜
+ 			</div>
+ 			<div>
+ 				<div class="desc">
+ 					<textarea></textarea>
+ 				</div>
+ 			</div>
+ 			<div>
+ 				<input type="date">
+ 				<button type="submit">submit</button>
+ 			</div>
+ 		</div> 任务细节结束 -->
+ 	</div> <!-- 总容器结束 -->
+	 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	 <script type="text/javascript" src="js/base.js"></script>
+</body>
+</html>
